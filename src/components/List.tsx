@@ -1,15 +1,19 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-type Props = {};
-
-const List = ({}: Props) => {
+interface Props {
+  cards: {
+    title: string;
+    content: string;
+  }[];
+}
+const List: React.FC<Card[]> = ({ cards }) => {
+  console.log(cards);
   return (
     <ul>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {cards.map((card: Card, index: string) => (
+        <ListItem key={index} title={card.title.toString()} content={card.content} />
+      ))}
     </ul>
   );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import List from './List';
 
-type Props = {};
-
-const Column = ({}: Props) => {
+const Column: React.FC<KanbanColumn[]> = ({ title, cards }) => {
+  // console.log(cards);
   return (
     <div>
-      <List />
+      <h3>{title}</h3>
+      <List cards={cards} />
     </div>
   );
 };
