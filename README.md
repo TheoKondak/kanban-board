@@ -21,3 +21,4 @@ The three pillars of front-end development are HTML, CSS and JavaScript. We woul
 
 You have one week to complete the assignment. You decide yourself how much time and effort you invest in it, but quality(!) and a reasonable delivery time are always highly appreciated. 
 Please send us an email (jobs@madewithlove.com) when you think the assignment is ready for review. Please mention your name, Github username, and a link to what we need to review.
+

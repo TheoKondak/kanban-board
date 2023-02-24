@@ -1,0 +1,81 @@
+{
+  "kanbanColumn": [
+    {
+      "title": "to-do",
+      "cards": [
+        {
+          "title": "China",
+          "content": "Oreamnos americanus"
+        },
+        {
+          "title": "Sweden",
+          "content": "Thylogale stigmatica"
+        },
+        {
+          "title": "Philippines",
+          "content": "Cervus duvauceli"
+        },
+        {
+          "title": "Poland",
+          "content": "Funambulus pennati"
+        },
+        {
+          "title": "Greece",
+          "content": "Paroaria gularis"
+        }
+      ]
+    },
+
+    {
+      "title": "doing",
+      "cards": [
+        {
+          "title": "Canada",
+          "content": "Panthera leo"
+        },
+        {
+          "title": "China",
+          "content": "Camelus dromedarius"
+        },
+        {
+          "title": "China",
+          "content": "Rhea americana"
+        },
+        {
+          "title": "Russia",
+          "content": "Tamandua tetradactyla"
+        },
+        {
+          "title": "Brazil",
+          "content": "Ninox superciliaris"
+        }
+      ]
+    },
+
+    {
+      "title": "done",
+      "cards": [
+        {
+          "title": "Botswana",
+          "content": "Phasianus colchicus"
+        },
+        {
+          "title": "Sweden",
+          "content": "Dendrocygna viduata"
+        },
+        {
+          "title": "Indonesia",
+          "content": "Connochaetus taurinus"
+        },
+        {
+          "title": "China",
+          "content": "Crocuta crocuta"
+        },
+        {
+          "title": "Sweden",
+          "content": "Vanellus armatus"
+        }
+      ]
+    }
+  ]
+}
