@@ -1,7 +1,7 @@
 import React from 'react';
 import List from './List';
 
-const Column: React.FC<KanbanColumn[]> = ({ title, cards }) => {
+const Column: React.FC<KanbanColumn> = ({ title, cards }) => {
   // console.log(cards);
   return (
     <div>

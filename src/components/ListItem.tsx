@@ -1,8 +1,6 @@
 import React from 'react';
 
-type Props = {};
-
-const ListItem = ({}: Props) => {
+const ListItem: React.FC<Card> = ({}) => {
   return <li>ListItem</li>;
 };
 
