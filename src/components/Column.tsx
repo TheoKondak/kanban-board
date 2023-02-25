@@ -1,12 +1,12 @@
 import React from 'react';
-import List from './List';
+import Tickets from './Tickets';
 
-const Column: React.FC<KanbanColumn> = ({ title, cards }) => {
-  // console.log(cards);
+const Column: React.FC<KanbanColumn> = ({ title, tickets }) => {
+  // console.log(tickets);
   return (
     <div>
       <h3>{title}</h3>
-      <List cards={cards} />
+      <Tickets tickets={tickets} />
     </div>
   );
 };

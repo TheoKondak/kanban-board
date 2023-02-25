@@ -24,7 +24,7 @@ const App = () => {
       {kanbanColumns ? (
         kanbanColumns.map((kanbanColumn: KanbanColumn, index: number) => {
           const key: string = generateId(index.toString() + '_' + kanbanColumn.title.toString());
-          return <Column key={key} title={kanbanColumn.title} cards={kanbanColumn.cards} />;
+          return <Column key={key} title={kanbanColumn.title} tickets={kanbanColumn.tickets} />;
         })
       ) : (
         <Loading />

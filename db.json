@@ -2,7 +2,7 @@
   "kanban": [
     {
       "title": "to-do",
-      "cards": [
+      "tickets": [
         {
           "title": "Ivory Coast",
           "content": "Oreamnos americanus"
@@ -28,7 +28,7 @@
 
     {
       "title": "doing",
-      "cards": [
+      "tickets": [
         {
           "title": "Canada",
           "content": "Panthera leo"
@@ -54,7 +54,7 @@
 
     {
       "title": "done",
-      "cards": [
+      "tickets": [
         {
           "title": "Botswana",
           "content": "Phasianus colchicus"
