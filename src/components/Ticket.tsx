@@ -1,11 +1,14 @@
 import React from 'react';
+import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
-const Tickets: React.FC<Ticket> = ({ title, content }) => (
+const Tickets: React.FC<Card> = ({ title, content }) => (
   <li>
-    <h4>{title}</h4>
+    <h4>
+      <EditText defaultValue={title} />
+    </h4>
 
-    <p>{content}</p>
+    <EditTextarea defaultValue={content} />
   </li>
 );
 export default Tickets;
