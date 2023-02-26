@@ -2,7 +2,7 @@ interface Ticket {
   id: string;
   title: string;
   content: string;
-  kanbanData: KanbanColumns;
+  columnId: string;
 }
 
 interface Tickets {
@@ -13,10 +13,13 @@ interface Tickets {
 interface KanbanColumn {
   id: string;
   title: string;
-  tickets: Ticket[];
-  kanbanData: KanbanColumns;
 }
 
 interface KanbanColumns {
   kanbanData: KanbanColumn[];
+}
+
+interface Kanban {
+  columns: KanbanColumns;
+  tickets: Tickets;
 }

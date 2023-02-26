@@ -1,9 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
+
 import { useDrag } from 'react-dnd';
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
-const Ticket: React.FC<Ticket> = ({ id, title, content }) => {
+const Ticket: React.FC<Ticket> = ({ id, title, content, columnId }) => {
   const [{ isDragging }, drag, dragTicket] = useDrag(() => ({
     // "type" is required. It is used by the "accept" specification of drop targets.
     type: 'TICKET',
@@ -12,7 +14,7 @@ const Ticket: React.FC<Ticket> = ({ id, title, content }) => {
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
-    item: { id, title, content },
+    item: { id, title, content, columnId },
   }));
 
   return (

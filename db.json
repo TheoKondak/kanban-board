@@ -1,254 +1,177 @@
 {
-  "kanban": [
-    {
-      "id": 0,
-      "title": "to do",
-      "tickets": [
-        {
-          "id": 1,
-          "title": "Brazil",
-          "content": "Mitchell-Schiller"
-        },
-        {
-          "id": 2,
-          "title": "Indonesia",
-          "content": "Wintheiser LLC"
-        },
-        {
-          "id": 3,
-          "title": "Portugal",
-          "content": "Morissette, Daugherty and Rodriguez"
-        },
-        {
-          "id": 4,
-          "title": "Indonesia",
-          "content": "Brakus Inc"
-        },
-        {
-          "id": 5,
-          "title": "Brazil",
-          "content": "Gerlach Group"
-        },
-        {
-          "id": 6,
-          "title": "Sweden",
-          "content": "Howe and Sons"
-        },
-        {
-          "id": 7,
-          "title": "Italy",
-          "content": "Boyle Inc"
-        },
-        {
-          "id": 8,
-          "title": "Colombia",
-          "content": "Little-Keeling"
-        },
-        {
-          "id": 9,
-          "title": "France",
-          "content": "Murray Inc"
-        }
-      ]
-    },
+  "kanban": {
+    "columns": [
+      {
+        "id": 0,
+        "title": "to do"
+      },
+      {
+        "id": 1,
+        "title": "doing"
+      },
+      {
+        "id": 2,
+        "title": "done"
+      }
+    ],
 
-    {
-      "id": 1,
-      "title": "doing",
-      "tickets": [
-        {
-          "id": 10,
-          "title": "Japan",
-          "content": "Welch, Spencer and Glover"
-        },
-        {
-          "id": 11,
-          "title": "China",
-          "content": "Crist Inc"
-        },
-        {
-          "id": 12,
-          "title": "Czech Republic",
-          "content": "Rodriguez, Mueller and Lakin"
-        },
-        {
-          "id": 13,
-          "title": "France",
-          "content": "Beatty Group"
-        },
-        {
-          "id": 14,
-          "title": "France",
-          "content": "Sawayn-Kemmer"
-        },
-        {
-          "id": 15,
-          "title": "China",
-          "content": "Wyman and Sons"
-        },
-        {
-          "id": 16,
-          "title": "Venezuela",
-          "content": "Gleason-Pollich"
-        },
-        {
-          "id": 17,
-          "title": "Uzbekistan",
-          "content": "Rodriguez LLC"
-        },
-        {
-          "id": 18,
-          "title": "Spain",
-          "content": "Huels, Stamm and Boehm"
-        },
-        {
-          "id": 19,
-          "title": "United States",
-          "content": "Gulgowski, Kassulke and Kozey"
-        },
-        {
-          "id": 20,
-          "title": "Philippines",
-          "content": "Ward, Mante and Cartwright"
-        }
-      ]
-    },
-
-    {
-      "id": 2,
-      "title": "done",
-      "tickets": [
-        {
-          "id": 21,
-          "title": "Poland",
-          "content": "Goyette-O'Connell"
-        },
-        {
-          "id": 22,
-          "title": "Brazil",
-          "content": "Friesen, Toy and Yundt"
-        },
-        {
-          "id": 23,
-          "title": "Portugal",
-          "content": "Mosciski LLC"
-        },
-        {
-          "id": 24,
-          "title": "Belarus",
-          "content": "Champlin Inc"
-        },
-        {
-          "id": 25,
-          "title": "China",
-          "content": "Gulgowski, Ernser and Hoeger"
-        },
-        {
-          "id": 26,
-          "title": "China",
-          "content": "Botsford-Runolfsdottir"
-        },
-        {
-          "id": 27,
-          "title": "Cameroon",
-          "content": "Howe-Wisozk"
-        },
-        {
-          "id": 28,
-          "title": "Senegal",
-          "content": "Beer, Schultz and Streich"
-        },
-        {
-          "id": 29,
-          "title": "Greece",
-          "content": "Homenick, Balistreri and Koch"
-        },
-        {
-          "id": 30,
-          "title": "Canada",
-          "content": "Fay, Hansen and Effertz"
-        },
-        {
-          "id": 31,
-          "title": "Sweden",
-          "content": "Aufderhar-Barrows"
-        },
-        {
-          "id": 32,
-          "title": "Brazil",
-          "content": "Dooley-Heaney"
-        },
-        {
-          "id": 33,
-          "title": "Thailand",
-          "content": "Haley LLC"
-        },
-        {
-          "id": 34,
-          "title": "Equatorial Guinea",
-          "content": "Kihn, Hamill and Sipes"
-        },
-        {
-          "id": 35,
-          "title": "Sri Lanka",
-          "content": "Wintheiser, Batz and Stiedemann"
-        },
-        {
-          "id": 36,
-          "title": "Slovenia",
-          "content": "Jacobs, Sipes and Buckridge"
-        },
-        {
-          "id": 37,
-          "title": "Dominican Republic",
-          "content": "Waelchi, Veum and Bartell"
-        },
-        {
-          "id": 38,
-          "title": "France",
-          "content": "Cruickshank-McKenzie"
-        },
-        {
-          "id": 39,
-          "title": "Indonesia",
-          "content": "Donnelly-Bernier"
-        },
-        {
-          "id": 40,
-          "title": "Spain",
-          "content": "Conn LLC"
-        },
-        {
-          "id": 41,
-          "title": "Portugal",
-          "content": "Schumm and Sons"
-        },
-        {
-          "id": 42,
-          "title": "Portugal",
-          "content": "Altenwerth-Friesen"
-        },
-        {
-          "id": 43,
-          "title": "Philippines",
-          "content": "Wilkinson LLC"
-        },
-        {
-          "id": 44,
-          "title": "Poland",
-          "content": "Witting and Sons"
-        },
-        {
-          "id": 45,
-          "title": "Ukraine",
-          "content": "Considine, Volkman and Wunsch"
-        },
-        {
-          "id": 46,
-          "title": "Portugal",
-          "content": "Kessler, Collier and Blanda"
-        }
-      ]
-    }
-  ]
+    "tickets": [
+      {
+        "id": 1,
+        "columnId": 0,
+        "title": "Poland",
+        "content": "Feil Inc"
+      },
+      {
+        "id": 2,
+        "columnId": 0,
+        "title": "United States",
+        "content": "Hoeger Group"
+      },
+      {
+        "id": 3,
+        "columnId": 0,
+        "title": "Indonesia",
+        "content": "Hickle Inc"
+      },
+      {
+        "id": 4,
+        "columnId": 0,
+        "title": "Nigeria",
+        "content": "Botsford and Sons"
+      },
+      {
+        "id": 5,
+        "columnId": 0,
+        "title": "China",
+        "content": "Nader, Boehm and Schuppe"
+      },
+      {
+        "id": 6,
+        "columnId": 0,
+        "title": "Portugal",
+        "content": "Berge, Kshlerin and Mertz"
+      },
+      {
+        "id": 7,
+        "columnId": 0,
+        "title": "Russia",
+        "content": "Breitenberg, Hilpert and Daniel"
+      },
+      {
+        "id": 8,
+        "columnId": 0,
+        "title": "Philippines",
+        "content": "Mayert, Gusikowski and Adams"
+      },
+      {
+        "id": 9,
+        "columnId": 0,
+        "title": "Tanzania",
+        "content": "Maggio, Cummerata and Konopelski"
+      },
+      {
+        "id": 10,
+        "columnId": 0,
+        "title": "Honduras",
+        "content": "Cassin-Balistreri"
+      },
+      {
+        "id": 11,
+        "columnId": 1,
+        "title": "Russia",
+        "content": "Upton LLC"
+      },
+      {
+        "id": 12,
+        "columnId": 1,
+        "title": "Sweden",
+        "content": "Barton, Monahan and Hackett"
+      },
+      {
+        "id": 13,
+        "columnId": 1,
+        "title": "Philippines",
+        "content": "Block and Sons"
+      },
+      {
+        "id": 14,
+        "columnId": 1,
+        "title": "North Korea",
+        "content": "Kshlerin-Bernhard"
+      },
+      {
+        "id": 15,
+        "columnId": 1,
+        "title": "Brazil",
+        "content": "Ferry and Sons"
+      },
+      {
+        "id": 16,
+        "columnId": 2,
+        "title": "Argentina",
+        "content": "Tillman, Roob and Schaefer"
+      },
+      {
+        "id": 17,
+        "columnId": 2,
+        "title": "Philippines",
+        "content": "Pacocha, Nitzsche and Gibson"
+      },
+      {
+        "id": 18,
+        "columnId": 2,
+        "title": "China",
+        "content": "Christiansen Group"
+      },
+      {
+        "id": 19,
+        "columnId": 2,
+        "title": "Indonesia",
+        "content": "Schamberger-Bechtelar"
+      },
+      {
+        "id": 20,
+        "columnId": 2,
+        "title": "China",
+        "content": "Bernhard Inc"
+      },
+      {
+        "id": 21,
+        "columnId": 2,
+        "title": "Nepal",
+        "content": "Simonis, Mills and McLaughlin"
+      },
+      {
+        "id": 22,
+        "columnId": 2,
+        "title": "Turkmenistan",
+        "content": "Schinner-Wolf"
+      },
+      {
+        "id": 23,
+        "columnId": 2,
+        "title": "Ukraine",
+        "content": "Leuschke, Bashirian and Kautzer"
+      },
+      {
+        "id": 24,
+        "columnId": 2,
+        "title": "Tunisia",
+        "content": "Pollich, Stark and Kunze"
+      },
+      {
+        "id": 25,
+        "columnId": 2,
+        "title": "Brazil",
+        "content": "Fadel and Sons"
+      },
+      {
+        "id": 26,
+        "columnId": 2,
+        "title": "Peru",
+        "content": "Huel, Stehr and Mraz"
+      }
+    ]
+  }
 }
