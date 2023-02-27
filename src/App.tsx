@@ -26,7 +26,7 @@ const App = () => {
     kanbanService.get('/columns').then((columns) => {
       setKanbanColumns(columns);
     });
-  }, []);
+  }, [tickets]);
   // console.log(tickets);
   return (
     <div className="App bg-[rgb(36,36,36)]  text-left mx-4 md:mx-10 md:my-4 p-y-10 w-full flex space-x-5 overflow-x-scroll overflow-y-hidden ">
