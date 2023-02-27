@@ -9,7 +9,7 @@ import Button from './Button';
 import kanbanService from '../services/kanbanService';
 
 const TicketTitle = ({ clicked, setClicked, ticket, setTickets, tickets, columnId }) => {
-  const [ticketTitle, setTicketTitle] = useState('Default Value');
+  const [ticketTitle, setTicketTitle] = useState('Title');
 
   const handleChange = (e, setFn) => setFn(e.target.value);
 
@@ -28,12 +28,12 @@ const TicketTitle = ({ clicked, setClicked, ticket, setTickets, tickets, columnI
         setTickets(tickets.concat(newTicket));
       });
     } else {
-      alert(`You need to fill both name and phone number fields`);
+      setClicked(clicked ? false : true);
     }
   };
 
   return (
-    <div className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2 ">
+    <div className="bg-[rgb(56,56,56)] rounded p-2 mx-2 mb-2 ">
       <h4 className="text-sm">
         <EditText
           name="TicketTitle"
@@ -47,6 +47,10 @@ const TicketTitle = ({ clicked, setClicked, ticket, setTickets, tickets, columnI
           onBlur={() => {
             setClicked(clicked ? false : true);
           }}
+          onEditMode={() => {
+            setTicketTitle('');
+          }}
+          className="bg-[rgb(56,56,56)]"
         />
       </h4>
     </div>
