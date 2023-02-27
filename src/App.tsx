@@ -19,9 +19,12 @@ const App = () => {
   const [tickets, setTickets] = useState<Tickets | null>(null);
 
   useEffect(() => {
-    kanbanService.getAll().then((kanban) => {
-      setKanbanColumns(kanban.columns);
-      setTickets(kanban.tickets);
+    kanbanService.get('/tickets').then((tickets) => {
+      setTickets(tickets);
+    });
+
+    kanbanService.get('/columns').then((columns) => {
+      setKanbanColumns(columns);
     });
   }, []);
 
