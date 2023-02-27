@@ -15,7 +15,10 @@
   ],
   "tickets": [
     {
-      "id": 1
+      "id": 1,
+      "columnId": 0,
+      "title": "Poland",
+      "content": "Feil Inc"
     },
     {
       "id": 2,
