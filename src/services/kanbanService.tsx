@@ -26,8 +26,8 @@ const get = (query) => {
     });
 };
 
-const create = (query: string, newObject: Ticket) => {
-  const request = axios.post(baseUrl + query, newObject);
+const create = (query: string, newTicket: Ticket) => {
+  const request = axios.post(baseUrl + query, newTicket);
   return request
     .then((response) => {
       return response.data;
