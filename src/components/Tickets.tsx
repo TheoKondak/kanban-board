@@ -3,16 +3,16 @@ import React from 'react';
 // Components
 import Ticket from './Ticket';
 
-// Helper
-import generateId from '../helper/generateId';
-import Loading from './Loading';
+const Tickets: React.FC<Ticket[]> = ({ columnTickets, tickets, setTickets }) => {
+  const moveTicket = (id, columnId) => {
+    const updatedTickets = tickets.map((ticket) => (ticket.id === id ? { ...ticket, columnId: columnId } : ticket));
+    setTickets(updatedTickets);
+  };
 
-const Tickets: React.FC<Ticket[]> = ({ tickets }) => {
   return (
     <ul className={'w-full my-0 '}>
-      {tickets.map((ticket: Ticket) => {
-        // console.log(ticket);
-        return <Ticket id={ticket.id.toString()} key={ticket.id.toString()} title={ticket.title} content={ticket.content} columnId={ticket.columnId} />;
+      {columnTickets.map((ticket: Ticket) => {
+        return <Ticket ticketId={ticket.id} key={ticket.id.toString()} title={ticket.title} content={ticket.content} moveTicket={moveTicket} setTickets={setTickets} tickets={tickets} />;
       })}
     </ul>
   );

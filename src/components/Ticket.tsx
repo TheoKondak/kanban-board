@@ -5,17 +5,23 @@ import { useDrag } from 'react-dnd';
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
-const Ticket: React.FC<Ticket> = ({ id, title, content, columnId }) => {
-  const [{ isDragging }, drag, dragTicket] = useDrag(() => ({
-    // "type" is required. It is used by the "accept" specification of drop targets.
+const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets }) => {
+  const moveTicket = (id, columnId) => {
+    const updatedTickets = tickets.map((ticket) => (ticket.id === ticketId ? { ...ticket, columnId: columnId } : ticket));
+    setTickets(updatedTickets);
+  };
+
+  const [{ isDragging }, drag] = useDrag({
     type: 'TICKET',
-    // The collect function utilizes a "monitor" instance (see the Overview for what this is)
-    // to pull important pieces of state from the DnD system.
+    item: { id: ticketId, title: title, content: content, columnId: columnId },
+    end: (item, monitor) => {
+      const dropResult = monitor.getDropResult();
+      item && dropResult && moveTicket(item.id, dropResult.item.columnId);
+    },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
-    item: { id, title, content, columnId },
-  }));
+  });
 
   return (
     <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2" ref={drag}>

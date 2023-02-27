@@ -15,18 +15,22 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import './App.css';
 
 const App = () => {
-  const [kanban, setKanban] = useState<Kanban[] | null>(null);
+  const [kanbanColumns, setKanbanColumns] = useState<Kanban[] | null>(null);
+  const [tickets, setTickets] = useState<Tickets | null>(null);
 
   useEffect(() => {
-    kanbanService.getAll().then((kanban) => setKanban(kanban));
+    kanbanService.getAll().then((kanban) => {
+      setKanbanColumns(kanban.columns);
+      setTickets(kanban.tickets);
+    });
   }, []);
 
   return (
     <div className="App bg-[rgb(36,36,36)]  text-left mx-4 md:mx-10 md:my-4 p-y-10 w-full flex space-x-5 overflow-x-scroll overflow-y-hidden ">
       <DndProvider backend={HTML5Backend}>
-        {kanban ? (
-          kanban.columns.map((kanbanColumn: KanbanColumn) => {
-            return <Column key={kanbanColumn.id.toString()} id={kanbanColumn.id.toString()} title={kanbanColumn.title} tickets={kanban.tickets} />;
+        {kanbanColumns ? (
+          kanbanColumns.map((kanbanColumn: KanbanColumn) => {
+            return <Column key={kanbanColumn.id.toString()} columnId={kanbanColumn.id} title={kanbanColumn.title} tickets={tickets} setTickets={setTickets} />;
           })
         ) : (
           <Loading />
