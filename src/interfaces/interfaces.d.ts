@@ -1,8 +1,8 @@
 interface Ticket {
-  id: string;
+  id: number;
   title: string;
   content: string;
-  columnId: string;
+  columnId: number;
 }
 
 interface Tickets {
@@ -11,8 +11,10 @@ interface Tickets {
 }
 
 interface KanbanColumn {
-  id: string;
+  columnId: number;
   title: string;
+  tickets: Tickets;
+  setTickets: function;
 }
 
 interface KanbanColumns {

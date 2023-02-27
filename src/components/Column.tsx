@@ -5,11 +5,12 @@ import { useDrop } from 'react-dnd';
 import Tickets from './Tickets';
 
 const Column: React.FC<KanbanColumn> = ({ columnId, title, tickets, setTickets }) => {
+  // DND Functionality
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({
       // The type (or types) to accept - strings or symbols
       accept: 'TICKET',
-      drop: (ticket, monitor) => ({
+      drop: (ticket: Ticket, monitor) => ({
         item: { ...ticket, columnId: columnId },
       }),
       // Props to collect
