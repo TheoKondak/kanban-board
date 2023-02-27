@@ -25,3 +25,8 @@ interface Kanban {
   columns: KanbanColumns;
   tickets: Tickets;
 }
+
+interface Button {
+  text: string;
+  onClick: function;
+}
