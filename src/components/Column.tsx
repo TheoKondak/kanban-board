@@ -6,7 +6,7 @@ import Loading from './Loading';
 
 import Tickets from './Tickets';
 
-const Column: React.FC<KanbanColumn> = ({ columnId, title, tickets, setTickets }) => {
+const Column: React.FC<Column> = ({ columnId, title, tickets, setTickets }) => {
   // DND Functionality
   const [{ canDrop, isOver }, drop] = useDrop(
     () => ({

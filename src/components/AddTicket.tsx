@@ -8,10 +8,10 @@ import Button from './Button';
 // Kanban Service
 import kanbanService from '../services/kanbanService';
 
-const TicketTitle = ({ clicked, setClicked, ticket, setTickets, tickets, columnId }) => {
+const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, tickets, columnId }) => {
   const [ticketTitle, setTicketTitle] = useState('Title');
 
-  const handleChange = (e, setFn) => setFn(e.target.value);
+  const handleChange = (e: object, setFn: Function) => setFn(e.target.value);
 
   const handleSave = () => {
     // Create ticket object
@@ -57,18 +57,18 @@ const TicketTitle = ({ clicked, setClicked, ticket, setTickets, tickets, columnI
   );
 };
 
-const AddTicket = ({ columnId, tickets, setTickets }) => {
+const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets }) => {
   const [ticket, setTicket] = useState('');
   const [clicked, setClicked] = useState(false);
 
-  const onAddTicketClick = (clicked, setClicked) => {
+  const onAddTicketClick = (clicked: Boolean, setClicked: Function) => {
     setClicked(clicked ? false : true);
   };
 
   return (
     <div className="w-full">
       {clicked ? (
-        <TicketTitle clicked={clicked} setClicked={setClicked} ticket={ticket} setTickets={setTickets} tickets={tickets} columnId={columnId} />
+        <TicketTitle clicked={clicked} setClicked={setClicked} setTickets={setTickets} tickets={tickets} columnId={columnId} />
       ) : (
         <Button
           text="Add New Ticket"
