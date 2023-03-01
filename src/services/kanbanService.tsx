@@ -81,4 +81,5 @@ const update = (query, newObject) => {
 export default {
   get,
   create,
+  update,
 };
