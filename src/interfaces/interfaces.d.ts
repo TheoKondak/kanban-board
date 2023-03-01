@@ -13,6 +13,8 @@ interface Ticket {
 }
 
 interface Tickets {
+  map(arg0: (ticket: any) => any): unknown;
+  concat(newTicket: any): any;
   filter(arg0: (ticket: any) => boolean): unknown;
   id: number;
   title: string;
@@ -21,9 +23,8 @@ interface Tickets {
 
 interface TicketTitle {
   clicked: boolean;
-  ticket: Ticket;
-  setTickets: function;
-  setClicked: function;
+  setTickets: Function;
+  setClicked: Function;
   tickets: Tickets;
   columnId: number;
 }
@@ -31,7 +32,7 @@ interface TicketTitle {
 interface AddTicket {
   columnId: number;
   tickets: Tickets;
-  setTickets: function;
+  setTickets: Function;
 }
 
 interface TicketModal {
@@ -44,7 +45,7 @@ interface Column {
   columnId: number;
   title: string;
   tickets: Tickets;
-  setTickets: function;
+  setTickets: Function;
 }
 
 interface KanbanColumn {
@@ -64,5 +65,5 @@ interface Kanban {
 
 interface Button {
   text: string;
-  onClick: function;
+  onClick: Function;
 }

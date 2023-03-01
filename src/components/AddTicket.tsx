@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 
 import { EditText, EditTextarea } from 'react-edit-text';
@@ -11,12 +10,12 @@ import kanbanService from '../services/kanbanService';
 const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, tickets, columnId }) => {
   const [ticketTitle, setTicketTitle] = useState('Title');
 
-  const handleChange = (e: object, setFn: Function) => setFn(e.target.value);
+  const handleChange = (e: React.FormEvent<HTMLInputElement>, setFn: Function) => setFn(e.target.value);
 
   const handleSave = () => {
     // Create ticket object
     let newTicket: Ticket = {
-      id: Math.max(...tickets.map((ticket) => ticket.id)) + 1,
+      id: Math.max(...(tickets.map((ticket: Ticket) => ticket.id) as [])) + 1,
       title: ticketTitle,
       content: '',
       columnId: columnId,
@@ -39,7 +38,7 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
           name="TicketTitle"
           value={ticketTitle}
           defaultValue="Title"
-          onChange={(e) => handleChange(e, setTicketTitle)}
+          onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)}
           onSave={() => {
             handleSave();
             setClicked(clicked ? false : true);
