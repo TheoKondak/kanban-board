@@ -116,12 +116,12 @@ To run the tests open  `requests/kanban.rest` and press **Send Request**
 ### Known Issues
 
 - Typescript is only partially implemented, some interfaces need to be updated.
-- When someone visits a ticket by typing the URL, then the Modal does not pop up. It is being inserted into the DOM, but it does not display.
 - Several design issues in all screen sizes.
 
 ### Fixed Issues
 
 - When someone tries to visit a non-existing Ticket (ex `http://127.0.0.1:5173/ticket/someWrongURL`), then some errors occur in the console. This is due to React Router route handling.
+- When someone visits a ticket by typing the URL, then the Modal does not pop up. It is being inserted into the DOM, but it does not display.
 
 ## Future Updates
 
@@ -135,6 +135,7 @@ This app has some bare-bones capabilities, based on the [requested specification
 - Add a state management tool like Redux
 - Document components with Storybooks
 - Test components with Playwright
+- Depending on the audience of the application, improve Accessibility & SEO
 
 ## Resources
 
