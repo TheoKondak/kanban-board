@@ -1,3 +1,10 @@
+interface Root {
+  triggerTicketModal: Function;
+  kanbanColumns: KanbanColumns;
+  tickets: Tickets;
+  setTickets: Function;
+}
+
 interface Ticket {
   id: number;
   title: string;
@@ -46,6 +53,7 @@ interface KanbanColumn {
 }
 
 interface KanbanColumns {
+  map(arg0: (kanbanColumn: KanbanColumn) => JSX.Element): React.ReactNode;
   kanbanData: KanbanColumn[];
 }
 
