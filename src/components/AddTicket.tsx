@@ -58,7 +58,6 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
 };
 
 const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets }) => {
-  const [ticket, setTicket] = useState('');
   const [clicked, setClicked] = useState(false);
 
   const onAddTicketClick = (clicked: Boolean, setClicked: Function) => {
