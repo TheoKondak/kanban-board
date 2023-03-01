@@ -38,11 +38,11 @@ To start the app, you will need Node.js and npm or yarn.
 ## API Schema
 
 ```
-- Kanban
-  - Columns
+- Kanban: Array
+  - Columns: Array
     - id : Number
     - title: String
-  - Tickets
+  - Tickets: Array
     - id: Number
     - columnId: Number
     - title: String
@@ -82,7 +82,7 @@ For implementing the Drag and Drop functionality I used [React DND](https://gith
 
 > NOTE: Some diagrams are using [Mermaid Syntax](https://mermaid.js.org/). Github supports it by default. If you are viewing this file on VSCode there are plugins (ex [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)) that will be able to read and display the diagrams. 
 
-::: mermaid
+```mermaid
 flowchart TD
     A[Kanban Board] -->I[Modal]
     A[Kanban Board] -->B
@@ -97,8 +97,7 @@ flowchart TD
    
     F --> I[Modal]
    
-:::
-
+```
 
 ## Testing
 
