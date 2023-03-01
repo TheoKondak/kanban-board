@@ -52,15 +52,15 @@ To start the app, you will need Node.js and npm or yarn.
 
 ## Packages Used
 
-This project has several dependencies. To find an exhaustive list please check `package.json`, `dependencies` and `devDependencies`.
+This project has several dependencies. To find an exhaustive list please check `package.json, `dependencies`, and `devDependencies`.
 
 ### Axios
 
-Axios is the industry standard when it comes to HTTP requests. There are alternative methods querying data, like [React Query](https://react-query-v3.tanstack.com/), but the project is simple and straightforward at this stage, so there is no need for it.
+Axios is the industry standard when it comes to HTTP requests. There are alternative methods of querying data, like [React Query](https://react-query-v3.tanstack.com/), but the project is simple at this stage, so there is no need for it.
 
 ### React
 
-React, is considered the golden standard for developing web applications. It's well tested, well maintained with a huge ecosystem of other libraries that work out of the box with it. To create the app, I used Vite instead of react for [several reasons](https://vitejs.dev/guide/why.html).
+React, is considered the golden standard for developing web applications. It's well tested, well maintained with a huge ecosystem of other libraries that work out of the box with it. To create the app, I used Vite instead of CRA for [several reasons](https://vitejs.dev/guide/why.html).
 
 ### React Router
 
@@ -68,15 +68,15 @@ For handling routes, I chose React Router, again because it is the industry stan
 
 ### React Edit Text
 
-For handling textfields I used [React Edit Text](https://github.com/bymi15/react-edit-text) which is pretty straightforward and easy to use even though it is not so popular. 
+For handling textfields I used [React Edit Text](https://github.com/bymi15/react-edit-text) which is pretty straightforward to use even though it is not so popular. 
 
 ### Tailwind CSS
 
-For designing the interface, I used `Tailwind CSS`, which is one of the prefared methods in the industry, along `Styled Components`.
+For designing the interface, I used [Tailwind CSS](https://tailwindcss.com/docs/installation), which is one of the preferred methods in the industry, along [Styled Components](https://styled-components.com/).
 
 ### React DND
 
-For implementing the Drag and Drop functionality I used [React DND](https://github.com/react-dnd/react-dnd/), mostly because it is more up to date, and better maintained than it's alternatives like [React-Beautiful-Dnd](https://github.com/atlassian/react-beautiful-dnd).
+For implementing the Drag and Drop functionality I used [React DND](https://github.com/react-dnd/react-dnd/), mostly because it is more up-to-date, and better maintained than its alternatives like [React-Beautiful-Dnd](https://github.com/atlassian/react-beautiful-dnd).
 
 ## Kanban State Diagram
 
@@ -126,6 +126,9 @@ This app has some bare-bones capabilities, based on the [requested specification
 - Add Delete Ticket functionality
 - Request data from the server in some interval or on some action (create, edit Ticket).
 - To be able to rearrange the order of the tickets in a column
+- Add a state management tool like Redux
+- Document components with Storybooks
+- Test components with Playwright
 
 ## Sources
 
