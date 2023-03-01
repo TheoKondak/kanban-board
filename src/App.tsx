@@ -7,9 +7,10 @@ import kanbanService from './services/kanbanService';
 import BaseModalWrapper from './components/modal/BaseModalWrapper';
 import Root from './routes/root';
 import ErrorPage from './routes/error-view';
+import Loading from './components/Loading';
 
 // Router
-import { Routes, Route, Outlet, Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Routes, Route, Outlet, Link, useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
 
 // Styling
 import './App.css';
@@ -31,25 +32,28 @@ const App = () => {
 
   let location = useLocation();
   let state = location.state as { backgroundLocation?: Location };
-
   const triggerTicketModal = () => {
     setIsTicketModalVisible((wasTicketModalVisible) => !wasTicketModalVisible);
   };
-
+  // console.log(tickets);
   return (
-    <div className="App bg-[rgb(36,36,36)]  text-left mx-4 md:mx-10 md:my-4 p-y-10 w-full flex flex-column space-x-5 overflow-x-scroll overflow-y-hidden ">
-      <Routes location={state?.backgroundLocation || location}>
-        <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} />}>
-          <Route path="/tickets/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
-
-      {/* Show the modal when a `backgroundLocation` is set */}
-      {state?.backgroundLocation && (
-        <Routes>
-          <Route path="/tickets/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} />} />
-        </Routes>
+    <div className="App">
+      {tickets ? (
+        <div>
+          <Routes location={state?.backgroundLocation || location}>
+            <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} />}>
+              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} />} />
+              <Route path="*" element={<Navigate replace to="/" />} />
+            </Route>
+          </Routes>
+          {state?.backgroundLocation && (
+            <Routes>
+              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} />} />
+            </Routes>
+          )}{' '}
+        </div>
+      ) : (
+        <Loading />
       )}
     </div>
   );

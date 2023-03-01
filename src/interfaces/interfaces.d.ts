@@ -6,6 +6,7 @@ interface Ticket {
 }
 
 interface Tickets {
+  filter(arg0: (ticket: any) => boolean): unknown;
   id: number;
   title: string;
   tickets: Ticket[];
@@ -24,6 +25,12 @@ interface AddTicket {
   columnId: number;
   tickets: Tickets;
   setTickets: function;
+}
+
+interface TicketModal {
+  onBackdropClick: Function;
+  isTicketModalVisible: Function;
+  tickets: Tickets;
 }
 
 interface Column {
@@ -45,11 +52,6 @@ interface KanbanColumns {
 interface Kanban {
   columns: KanbanColumns;
   tickets: Tickets;
-}
-
-interface Button {
-  text: string;
-  onClick: function;
 }
 
 interface Button {

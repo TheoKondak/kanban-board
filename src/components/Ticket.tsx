@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 
 import { useDrag } from 'react-dnd';
-import { EditText, EditTextarea } from 'react-edit-text';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import 'react-edit-text/dist/index.css';
 
@@ -26,20 +24,18 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
     }),
   });
 
+  let location = useLocation();
+  // console.log(location);
   return (
     <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2" ref={drag} onClick={triggerTicketModal}>
-      <Link to={`/tickets/${ticketId}`}>
+      <Link to={`ticket/${ticketId}`} state={{ backgroundLocation: location }}>
         <h4
-          className="text-md  leading-4 font-light pb-1
+          className="text-[14px] text-white leading-4 font-light pb-1
 ">
-          {/* <EditText defaultValue={title} /> */}
           {title}
         </h4>
 
-        <div className="text-sm font-light pb-2">
-          {/* <EditTextarea defaultValue={content} /> */}
-          {content}
-        </div>
+        <div className="text-[9px] text-white font-light pb-2">{content}</div>
       </Link>
     </li>
   );
