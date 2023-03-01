@@ -117,6 +117,8 @@ To run the tests open  `requests/kanban.rest` and press **Send Request**
 
 - Typescript is only partially implemented, some interfaces need to be updated.
 - Several design issues in all screen sizes.
+- When the page refreshes, the columns reset (I am not sending PUT to the backend)
+- When a ticket is updated, the interface does not rerender
 
 ### Fixed Issues
 
