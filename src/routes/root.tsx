@@ -12,7 +12,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 // Router
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 // CSS
 import '../App.css';
@@ -20,6 +20,7 @@ import '../App.css';
 const Root = ({ triggerTicketModal, kanbanColumns, tickets, setTickets }) => {
   return (
     <div className="App bg-[rgb(36,36,36)]  text-left mx-4 md:mx-10 md:my-4 p-y-10 w-full flex space-x-5 overflow-x-scroll overflow-y-hidden ">
+      {/* Provides the Drag and Drop capability */}
       <DndProvider backend={HTML5Backend}>
         {kanbanColumns ? (
           kanbanColumns.map((kanbanColumn: KanbanColumn) => {
@@ -30,6 +31,7 @@ const Root = ({ triggerTicketModal, kanbanColumns, tickets, setTickets }) => {
         )}
 
         <div>
+          {/* Where Ticket modal will appear */}
           <Outlet />
         </div>
       </DndProvider>
