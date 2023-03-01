@@ -9,10 +9,10 @@ interface BaseModalWrapper {
   isTicketModalVisible: boolean;
 }
 
-const BaseModalWrapper: React.FC<BaseModalWrapper> = ({ onBackdropClick, isTicketModalVisible, tickets }) => {
+const BaseModalWrapper: React.FC<BaseModalWrapper> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch }) => {
   return (
     <div className={`fixed inset-0 ${isTicketModalVisible ? '' : 'pointer-events-none'}`}>
-      <TicketModal onBackdropClick={onBackdropClick} isTicketModalVisible={isTicketModalVisible} tickets={tickets} />
+      <TicketModal onBackdropClick={onBackdropClick} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} />
     </div>
   );
 };

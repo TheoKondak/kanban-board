@@ -12,7 +12,7 @@ import { VscCloseAll } from 'react-icons/vsc';
 // Services
 import kanbanService from '../../services/kanbanService';
 
-const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets }) => {
+const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch }) => {
   let navigate = useNavigate();
   let { ticketId } = useParams();
 
@@ -25,6 +25,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
   const closeModal = () => {
     onBackdropClick();
     navigate(-1);
+    (title != ticketTitle || content != ticketContent) && reFetch();
   };
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>, setFn: Function) => setFn(e.target.value);
