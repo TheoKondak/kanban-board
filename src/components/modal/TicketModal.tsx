@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // Router
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 
@@ -7,17 +9,48 @@ import { EditText, EditTextarea } from 'react-edit-text';
 // Icons
 import { VscCloseAll } from 'react-icons/vsc';
 
+// Services
+import kanbanService from '../../services/kanbanService';
+
 const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets }) => {
   let navigate = useNavigate();
   let { ticketId } = useParams();
 
   const ticket: [Ticket] = tickets.filter((ticket) => ticket.id === Number(ticketId));
+  const [{ id, columnId, title, content }] = ticket;
+  const [ticketTitle, setTicketTitle] = useState(title);
+  const [ticketContent, setTicketContent] = useState(content);
+
   // When closing the modal, close the modal and navigate to the previous directory
   const closeModal = () => {
     onBackdropClick();
     navigate(-1);
   };
 
+  const handleChange = (e: React.FormEvent<HTMLInputElement>, setFn: Function) => setFn(e.target.value);
+
+  const handleTicketUpdate = () => {
+    // Create ticket object
+    const updatedTicket: Ticket = {
+      id: id,
+      columnId: columnId,
+      title: ticketTitle,
+      content: ticketContent,
+    };
+
+    console.log(updatedTicket);
+
+    if (updatedTicket.title.length > 0) {
+      // Sync Data to the server
+      kanbanService.update(`tickets/${id}`, updatedTicket).then((updatedTicket) => {
+        setTicketTitle(ticketTitle);
+        setTicketContent(ticketContent);
+      });
+    } else {
+      setTicketTitle(ticketTitle);
+      alert('Ticket Title cannot be empty');
+    }
+  };
   return (
     <>
       {ticket.length === 0 ? (
@@ -34,9 +67,9 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
             </div>
 
             <div className="">
-              <h4 className="">{<EditText defaultValue={ticket[0].title} />}</h4>
+              <h4 className="">{<EditText defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)} />}</h4>
               <hr className=" block my-2 " />
-              <div>{<EditTextarea defaultValue={ticket[0].content} />}</div>
+              <div>{<EditTextarea defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />}</div>
             </div>
           </div>
         </>
