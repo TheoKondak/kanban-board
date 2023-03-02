@@ -1,6 +1,7 @@
-import React from 'react';
-
+// DND
 import { useDrop } from 'react-dnd';
+
+// Components
 import AddTicket from './AddTicket';
 import Loading from './Loading';
 

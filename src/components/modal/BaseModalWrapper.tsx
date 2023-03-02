@@ -1,13 +1,4 @@
-import React from 'react';
-
 import TicketModal from './TicketModal';
-
-import { useParams } from 'react-router-dom';
-
-interface BaseModalWrapper {
-  onBackdropClick: Function;
-  isTicketModalVisible: boolean;
-}
 
 const BaseModalWrapper: React.FC<BaseModalWrapper> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch }) => {
   return (
