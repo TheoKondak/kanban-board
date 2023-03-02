@@ -34,15 +34,15 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
   let location = useLocation();
 
   return (
-    <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2 hover:shadow-lg hover:bg-[rgb(26,26,26)]" ref={drag} onClick={triggerTicketModal}>
+    <li className="bg-primary-500 hover:bg-primary-600 dark:bg-primary-800 dark:hover:bg-primary-700 rounded p-2 mx-2 mb-2 hover:shadow-lg" ref={drag} onClick={triggerTicketModal}>
       <Link to={`ticket/${ticketId}`} state={{ backgroundLocation: location }}>
         <h4
-          className="text-[11px] font-medium text-white leading-4 font-light pb-1
+          className="text-xs font-medium text-white leading-4 font-light pb-1
 ">
           {title}
         </h4>
 
-        <div className="text-[9px] text-white font-light pb-2">{content.length > settings.tickets.ticketPreviewLength ? `${content.substring(0, settings.tickets.ticketPreviewLength)}...` : content}</div>
+        <div className="text-xxxs text-white font-light pb-2">{content.length > settings.tickets.ticketPreviewLength ? `${content.substring(0, settings.tickets.ticketPreviewLength)}...` : content}</div>
       </Link>
     </li>
   );

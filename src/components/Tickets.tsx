@@ -8,7 +8,7 @@ const Tickets: React.FC<Ticket[]> = ({ columnTickets, tickets, setTickets, trigg
   };
 
   return (
-    <ul className={'w-full my-0 overflow-x-auto h-full'}>
+    <ul className={'w-full my-0 overflow-x-auto '}>
       {columnTickets.map((ticket: Ticket) => {
         return <Ticket ticketId={ticket.id} key={ticket.id.toString()} title={ticket.title} content={ticket.content} moveTicket={moveTicket} setTickets={setTickets} tickets={tickets} triggerTicketModal={triggerTicketModal} settings={settings} />;
       })}

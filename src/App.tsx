@@ -58,7 +58,7 @@ const App = () => {
   };
 
   return (
-    <div className="App h-screen overflow-hidden">
+    <div className="App h-screen overflow-hidden bg-primary-200 dark:bg-primary-800">
       {tickets ? (
         <div className="h-screen">
           <Routes location={state?.backgroundLocation || location}>

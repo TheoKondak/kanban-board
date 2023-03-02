@@ -33,8 +33,8 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
   };
 
   return (
-    <div className="bg-[rgb(36,36,36)] rounded mx-2 mb-2 flex flex-col items-center justify-start ">
-      <h4 className="w-full text-left text-[10px] p-2">
+    <div className="bg-primary-800 rounded mx-2 mb-2 flex flex-col items-center justify-start ">
+      <h4 className="w-full text-left text-xxs p-2">
         <EditText
           name="TicketTitle"
           value={ticketTitle}
@@ -50,7 +50,7 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
           onEditMode={() => {
             setTicketTitle('');
           }}
-          className="pl-1 text-[10px] leading-5 w-full rounded-none active:rounded-none focus:rounded-none block border-transparent active:border-transparent focus:border-transparent hover:shadow-lg hover:bg-[rgb(48,48,48)]"
+          className="pl-1 text-xxs leading-5 w-full rounded-none active:rounded-none focus:rounded-none block border-transparent active:border-transparent focus:border-transparent hover:shadow-lg hover:bg-primary-800"
           // The textfield on click has an input element, that is not accessible from the JS side. The documentation is not clear on how to handle it, so I have added the input field css on App.css selector: [name='TicketTitle']
         />
       </h4>
@@ -70,13 +70,14 @@ const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets, setting
       {clicked ? (
         <TicketTitle clicked={clicked} setClicked={setClicked} setTickets={setTickets} tickets={tickets} columnId={columnId} />
       ) : (
-        <Button
-          text="Add New Ticket"
-          onClick={() => {
-            onAddTicketClick(clicked, setClicked);
-          }}
-          className=""
-        />
+        <div className="bg-primary-500 hover:bg-primary-600 dark:bg-primary-800 dark:hover:bg-primary-700 rounded mx-2 mb-2 flex flex-col items-center justify-center">
+          <Button
+            text="Add New Ticket"
+            onClick={() => {
+              onAddTicketClick(clicked, setClicked);
+            }}
+          />
+        </div>
       )}
     </div>
   );
