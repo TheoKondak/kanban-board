@@ -42,7 +42,7 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
           {title}
         </h4>
 
-        <div className="text-[9px] text-white font-light pb-2">{content.length > 0 ? `${content.substring(0, settings.tickets.ticketPreviewLength)}...` : ''}</div>
+        <div className="text-[9px] text-white font-light pb-2">{content.length > settings.tickets.ticketPreviewLength ? `${content.substring(0, settings.tickets.ticketPreviewLength)}...` : content}</div>
       </Link>
     </li>
   );
