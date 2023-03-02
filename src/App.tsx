@@ -58,9 +58,9 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App h-screen overflow-hidden">
       {tickets ? (
-        <div>
+        <div className="h-screen">
           <Routes location={state?.backgroundLocation || location}>
             <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} settings={settings} />}>
               <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} settings={settings} />} />

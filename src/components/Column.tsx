@@ -25,10 +25,11 @@ const Column: React.FC<Column> = ({ columnId, title, tickets, setTickets, trigge
   );
 
   return (
-    <div ref={drop} className={`flex flex-col items-center flex-shrink-0 w-[270px]  bg-[rgb(46,46,46)] p-1 mx-2 my-2 md:my-0 rounded-lg ${isOver ? 'opacity-50' : 'opacity-100'}`}>
-      <h3 className="text-sm text-left w-full my-2 py-0 pl-2 capitalize">{title}</h3>
+    <div ref={drop} className={`flex flex-col items-center flex-shrink-0 w-[270px]  bg-[rgb(46,46,46)] p-1 pb-3 mx-2 my-2 md:my-0 rounded-lg ${isOver ? 'opacity-50' : 'opacity-100'}`}>
+      <h3 className="text-sm text-left w-full my-2 mt-1 py-0 pl-2 capitalize">{title}</h3>
       <AddTicket columnId={columnId} tickets={tickets} setTickets={setTickets} settings={settings} />
-      {tickets ? <Tickets columnTickets={tickets.filter((ticket: Ticket) => columnId === ticket.columnId)} tickets={tickets} setTickets={setTickets} columnId={columnId} triggerTicketModal={triggerTicketModal} settings={settings} /> : <Loading />}
+
+      <div className="overflow-y-auto w-full h-auto">{tickets ? <Tickets columnTickets={tickets.filter((ticket: Ticket) => columnId === ticket.columnId)} tickets={tickets} setTickets={setTickets} columnId={columnId} triggerTicketModal={triggerTicketModal} settings={settings} /> : <Loading />}</div>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
     <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2 hover:shadow-lg hover:bg-[rgb(26,26,26)]" ref={drag} onClick={triggerTicketModal}>
       <Link to={`ticket/${ticketId}`} state={{ backgroundLocation: location }}>
         <h4
-          className="text-[14px] text-white leading-4 font-light pb-1
+          className="text-[11px] font-medium text-white leading-4 font-light pb-1
 ">
           {title}
         </h4>

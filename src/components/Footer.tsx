@@ -10,14 +10,14 @@ const Footer: React.FC<CopytrightInfo> = ({ settings }) => {
   const { copyrightInfo, githubLink, githubLinkOpensInNewTab } = settings;
 
   return (
-    <footer className=" flex flex-col items-center justify-center gap-4 p-2 md:p-4">
+    <footer className=" flex flex-col items-center justify-center gap-4 p-2 md:p-4 h-30">
       <div className="copyright-info text-[10px]">
         <div></div>
         {copyrightInfo}
       </div>
       <div>
         {githubLink.length > 0 && (
-          <a href={githubLink} target={githubLinkOpensInNewTab && '_blank'}>
+          <a href={githubLink} target={githubLinkOpensInNewTab && '_blank'} className="text-white hover:text-[#ff6224]">
             <VscGithub />
           </a>
         )}
