@@ -1,13 +1,17 @@
-import React from 'react';
-
+// DND
 import { useDrag } from 'react-dnd';
 
+// Router
 import { Link, useLocation } from 'react-router-dom';
+
+// Services
+import kanbanService from '../../services/kanbanService';
 
 import 'react-edit-text/dist/index.css';
 
 const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal }) => {
-  const moveTicket = (id, columnId) => {
+  // Drag and Drop
+  const moveTicket = (columnId) => {
     const updatedTickets = tickets.map((ticket) => (ticket.id === ticketId ? { ...ticket, columnId: columnId } : ticket));
     setTickets(updatedTickets);
   };
@@ -24,8 +28,9 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
     }),
   });
 
+  // Router
   let location = useLocation();
-  // console.log(location);
+
   return (
     <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2" ref={drag} onClick={triggerTicketModal}>
       <Link to={`ticket/${ticketId}`} state={{ backgroundLocation: location }}>

@@ -1,9 +1,9 @@
-import React from 'react';
-
+// DND
 import { useDrop } from 'react-dnd';
+
+// Components
 import AddTicket from './AddTicket';
 import Loading from './Loading';
-
 import Tickets from './Tickets';
 
 const Column: React.FC<Column> = ({ columnId, title, tickets, setTickets, triggerTicketModal }) => {

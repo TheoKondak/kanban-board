@@ -70,6 +70,11 @@ interface Button {
   onClick: Function;
 }
 
+interface BaseModalWrapper {
+  onBackdropClick: Function;
+  isTicketModalVisible: boolean;
+}
+
 // Services
 
 interface Get {
