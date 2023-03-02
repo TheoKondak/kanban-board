@@ -7,10 +7,11 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { EditText, EditTextarea } from 'react-edit-text';
 
 // Icons
-import { VscCloseAll } from 'react-icons/vsc';
+import { VscCloseAll, VscEdit, VscLink } from 'react-icons/vsc';
 
 // Services
 import kanbanService from '../../services/kanbanService';
+import copyTextToClipboard from '../../helper/copyTextToClipboard';
 
 const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch, settings }) => {
   let navigate = useNavigate();
@@ -59,18 +60,32 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
         <Navigate to="/" />
       ) : (
         <>
-          <div className={`fixed inset-0 bg-black ${isTicketModalVisible ? 'opacity-50 z-0' : 'pointer-events-none opacity-0'}`} onClick={closeModal}></div>
-          <div className={`fixed inset-1/4  w-6/12  h-2/3 bg-white text-black shadow-lg max-w-screen-sm p-4 ${isTicketModalVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
-            <div className="modalHeader relative h-5">
-              <button className="text-white absolute right-0 -top-2 p-0" onClick={closeModal}>
-                <VscCloseAll />
+          <div className={`fixed inset-0 bg-primary-900/50 dark:bg-primary-900/70 ${isTicketModalVisible ? 'opacity-100 backdrop-blur-sm' : 'pointer-events-none opacity-0'}`} onClick={closeModal}></div>
+          <div className={`fixed inset-8 md:inset-1/4  md:w-6/12 md:h-2/6 bg-primary-300 shadow-lg rounded-sm max-w-screen-sm h-5/6 md:h-3/6 px-4 py-2 ${isTicketModalVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+            <div className="modalHeader relative">
+              <button className="text-black bg-white absolute p-0 -top-6 -right-7" onClick={closeModal}>
+                <VscCloseAll className="w-5 h-5" />
               </button>
             </div>
 
             <div className="">
-              <h4 className="">{<EditText defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)} />}</h4>
-              <hr className=" block my-2 " />
-              <div>{<EditTextarea defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />}</div>
+              <div className="flex flex-row gap-4 justify-between items-center">
+                <div className="flex flex-row items-center justify-start w-full">
+                  <VscEdit className="text-primary-800 dark:text-primary-800" />
+                  <h4 className="input-field flex-grow-1 w-full ml-0.5">{<EditText style={{ width: '100%', fontSize: '1rem', lineHeight: '1.2rem', fontWeight: '400', color: 'black', backgroundColor: 'transparent', display: 'inline-block', borderRadius: '4px', padding: '.5ch' }} inputClassName="modalEditTitle" classList="text-left text-xxs w-full " defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)} />}</h4>
+                </div>
+                <button
+                  className="text-black text-xs bg-white py-0.5 px-1 inline-block "
+                  onClick={() => {
+                    copyTextToClipboard(window.location.href);
+                  }}>
+                  {/* <span>copy link</span> */}
+                  <VscLink className="inline-block w-4 h-4" />
+                </button>
+              </div>
+              <hr className=" block mt-2 mb-3 text-primary-900" />
+
+              <div>{<EditTextarea style={{ width: '100%', fontSize: '11px', color: 'black', fontWeight: '400', backgroundColor: 'rgba(230,230,230, 1)', padding: '4px', minHeight: '88px', borderRadius: '0.25rem' }} inputClassName="modalEditContent" classList="text-left text-xxs w-full shadow-lg" defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />}</div>
             </div>
           </div>
         </>

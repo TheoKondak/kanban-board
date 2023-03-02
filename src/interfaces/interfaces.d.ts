@@ -67,7 +67,7 @@ interface Kanban {
 
 interface Button {
   text: string;
-  onClick: Function;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 interface BaseModalWrapper {
@@ -78,6 +78,13 @@ interface BaseModalWrapper {
 interface Loading {
   type: string;
   color: string;
+}
+
+interface Logo {
+  src: string;
+  alt: string;
+  width: string;
+  height: string;
 }
 
 // Services
