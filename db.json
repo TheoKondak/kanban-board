@@ -1,6 +1,18 @@
 {
   "settings": {
-    "kanban": "",
+    "kanban": {
+      "logo": {
+        "src": "./logo.svg",
+        "width": "114",
+        "height": "26",
+        "alt": "Kanban Logo"
+      },
+      "footer": {
+        "copyrightInfo": "Made With Love by Theo for MobieTrain",
+        "githubLink": "https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak",
+        "githubLinkOpensInNewTab": true
+      }
+    },
     "tickets": {
       "ticketPreviewLength": 160
     }
