@@ -128,6 +128,7 @@ To run the tests open  `requests/kanban.rest` and press **Send Request**
 - When someone visits a ticket by typing the URL, then the Modal does not pop up. It is being inserted into the DOM, but it does not display.
 - When the page refreshes, the columns reset (I am not sending PUT to the backend)
 - When a ticket is updated, the interface does not rerender
+- Drag and drop is working only on desktop devices (no touch support)
 
 ## Future Updates
 
