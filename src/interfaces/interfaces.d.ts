@@ -19,6 +19,7 @@ interface Tickets {
   id: number;
   title: string;
   tickets: Ticket[];
+  columnTickets: Tickets;
 }
 
 interface TicketTitle {
@@ -46,6 +47,7 @@ interface Column {
   title: string;
   tickets: Tickets;
   setTickets: Function;
+  triggerTicketModal: Function;
 }
 
 interface KanbanColumn {
@@ -66,4 +68,20 @@ interface Kanban {
 interface Button {
   text: string;
   onClick: Function;
+}
+
+// Services
+
+interface Get {
+  query: string;
+}
+
+interface Create {
+  query: string;
+  newTicket: Ticket;
+}
+
+interface Update {
+  query: string;
+  newObject: Object;
 }

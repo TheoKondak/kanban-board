@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'http://localhost:3000';
 
-const get = (query) => {
+const get: Get = (query) => {
   const request = axios.get(baseUrl + query);
   return request
     .then((response) => response.data)
@@ -26,7 +26,7 @@ const get = (query) => {
     });
 };
 
-const create = (query: string, newTicket: Ticket) => {
+const create: Create = (query, newTicket) => {
   const request = axios.post(baseUrl + query, newTicket);
   return request
     .then((response) => {
@@ -52,7 +52,7 @@ const create = (query: string, newTicket: Ticket) => {
     });
 };
 
-const update = (query, newObject) => {
+const update: Update = (query, newObject) => {
   const request = axios.put(`${baseUrl}/${query}`, newObject);
   return request
     .then((response) => {
