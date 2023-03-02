@@ -19,11 +19,15 @@ const App = () => {
   const [kanbanColumns, setKanbanColumns] = useState<Kanban[] | null>(null);
   const [tickets, setTickets] = useState<Tickets | null>(null);
   const [fetch, setFetch] = useState(false);
+  const [settings, setSettings] = useState(null);
 
   // Get the API Data
   useEffect(() => {
     kanbanService.get('/columns').then((columns) => {
       setKanbanColumns(columns);
+    });
+    kanbanService.get('/settings').then((receivedSettings) => {
+      setSettings(receivedSettings);
     });
   }, []);
 
@@ -31,7 +35,6 @@ const App = () => {
     kanbanService.get('/tickets').then((tickets) => {
       setTickets(tickets);
     });
-    console.log('fetching');
   }, [fetch]);
 
   // Router
@@ -46,7 +49,6 @@ const App = () => {
 
   // Refetch data
   const reFetch = () => {
-    console.log('reFetch');
     setFetch(!fetch);
   };
 
@@ -60,14 +62,14 @@ const App = () => {
       {tickets ? (
         <div>
           <Routes location={state?.backgroundLocation || location}>
-            <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} />}>
-              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} />} />
+            <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} settings={settings} />}>
+              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} settings={settings} />} />
               <Route path="*" element={<Navigate replace to="/" />} />
             </Route>
           </Routes>
           {state?.backgroundLocation && (
             <Routes>
-              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} />} />
+              <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} settings={settings} />} />
             </Routes>
           )}
         </div>

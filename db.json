@@ -1,4 +1,10 @@
 {
+  "settings": {
+    "kanban": "",
+    "tickets": {
+      "ticketPreviewLength": 160
+    }
+  },
   "columns": [
     {
       "id": 0,

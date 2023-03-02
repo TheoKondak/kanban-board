@@ -9,7 +9,7 @@ import kanbanService from '../services/kanbanService';
 
 import 'react-edit-text/dist/index.css';
 
-const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal }) => {
+const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal, settings }) => {
   // Drag and Drop
   const moveTicket = (item, columnId) => {
     const updatedTickets = tickets.map((ticket) => (ticket.id === ticketId ? { ...ticket, columnId: columnId } : ticket));
@@ -42,7 +42,7 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
           {title}
         </h4>
 
-        <div className="text-[9px] text-white font-light pb-2">{content}</div>
+        <div className="text-[9px] text-white font-light pb-2">{`${content.substring(0, settings.tickets.ticketPreviewLength)}...`}</div>
       </Link>
     </li>
   );

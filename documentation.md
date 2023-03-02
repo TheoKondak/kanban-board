@@ -40,6 +40,10 @@ To start the app, you will need Node.js and npm or yarn.
 
 ```
 - Kanban: Array
+  - Settings: Object
+    - kanban: Object
+    - tickets: Object
+      - ticketPreviewLength: String
   - Columns: Array
     - id : Number
     - title: String
