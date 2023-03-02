@@ -54,7 +54,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
   };
   return (
     <>
-      {ticket.length === 0 ? (
+      {tickets.length === 0 ? (
         // If the ticket Id is not found, redirect to the home directory
         <Navigate to="/" />
       ) : (
