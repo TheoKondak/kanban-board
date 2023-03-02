@@ -12,3 +12,15 @@
   overflow: hidden;
   min-height: unset;
 }
+
+[name='TicketTitle'] {
+  width: 100%;
+  line-height: 1.25rem;
+  padding-left: 1ch;
+}
+
+[name='TicketTitle']:hover,
+[name='TicketTitle']:active,
+[name='TicketTitle']:focus {
+  border-color: transparent;
+}

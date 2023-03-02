@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import { EditText, EditTextarea } from 'react-edit-text';
-import 'react-edit-text/dist/index.css';
 import Button from './Button';
 
 // Kanban Service
 import kanbanService from '../services/kanbanService';
+
+// import 'react-edit-text/dist/index.css';
 
 const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, tickets, columnId }) => {
   const [ticketTitle, setTicketTitle] = useState('Title');
@@ -32,8 +33,8 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
   };
 
   return (
-    <div className="bg-[rgb(56,56,56)] rounded p-2 mx-2 mb-2 ">
-      <h4 className="text-sm">
+    <div className="bg-[rgb(36,36,36)] rounded mx-2 mb-2 flex flex-col items-center justify-start ">
+      <h4 className="w-full text-left text-[10px] p-2">
         <EditText
           name="TicketTitle"
           value={ticketTitle}
@@ -49,7 +50,8 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
           onEditMode={() => {
             setTicketTitle('');
           }}
-          className="bg-[rgb(56,56,56)]"
+          className="pl-1 text-[10px] leading-5 w-full rounded-none active:rounded-none focus:rounded-none block border-transparent active:border-transparent focus:border-transparent hover:shadow-lg hover:bg-[rgb(48,48,48)]"
+          // The textfield on click has an input element, that is not accessible from the JS side. The documentation is not clear on how to handle it, so I have added the input field css on App.css selector: [name='TicketTitle']
         />
       </h4>
     </div>
@@ -64,7 +66,7 @@ const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets, setting
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {clicked ? (
         <TicketTitle clicked={clicked} setClicked={setClicked} setTickets={setTickets} tickets={tickets} columnId={columnId} />
       ) : (
@@ -73,6 +75,7 @@ const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets, setting
           onClick={() => {
             onAddTicketClick(clicked, setClicked);
           }}
+          className=""
         />
       )}
     </div>

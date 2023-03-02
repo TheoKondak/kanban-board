@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 // Services
 import kanbanService from '../services/kanbanService';
 
-import 'react-edit-text/dist/index.css';
+// import 'react-edit-text/dist/index.css';
 
 const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal, settings }) => {
   // Drag and Drop
@@ -34,7 +34,7 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
   let location = useLocation();
 
   return (
-    <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2" ref={drag} onClick={triggerTicketModal}>
+    <li className="bg-[rgb(36,36,36)] rounded p-2 mx-2 mb-2 hover:shadow-lg hover:bg-[rgb(26,26,26)]" ref={drag} onClick={triggerTicketModal}>
       <Link to={`ticket/${ticketId}`} state={{ backgroundLocation: location }}>
         <h4
           className="text-[14px] text-white leading-4 font-light pb-1

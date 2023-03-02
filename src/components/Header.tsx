@@ -6,7 +6,6 @@ interface Header {
 
 const Header: React.FC<Header> = ({ logo }) => {
   const { src, alt, width, height } = logo;
-  console.log(src);
 
   return (
     <header className="p-2 bg-[rgb(46,46,46)] flex justify-between">
