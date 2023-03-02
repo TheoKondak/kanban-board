@@ -2,7 +2,7 @@
   "settings": {
     "kanban": {
       "logo": {
-        "src": "./logo.svg",
+        "src": "",
         "width": "114",
         "height": "26",
         "alt": "Kanban Logo"
