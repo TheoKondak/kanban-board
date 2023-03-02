@@ -121,13 +121,13 @@ To run the tests open  `requests/kanban.rest` and press **Send Request**
 
 - Typescript is only partially implemented, some interfaces need to be updated.
 - Several design issues in all screen sizes.
-- When a ticket is updated, the interface does not rerender
 
 ### Fixed Issues
 
 - When someone tries to visit a non-existing Ticket (ex `http://127.0.0.1:5173/ticket/someWrongURL`), then some errors occur in the console. This is due to React Router route handling.
 - When someone visits a ticket by typing the URL, then the Modal does not pop up. It is being inserted into the DOM, but it does not display.
 - When the page refreshes, the columns reset (I am not sending PUT to the backend)
+- When a ticket is updated, the interface does not rerender
 
 ## Future Updates
 
@@ -136,12 +136,14 @@ TODO
 This app has some bare-bones capabilities, based on the [requested specifications](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak#technical-assignment-front-end-engineer). That means that it lacks basic functionality, such as deleting a ticket.
 
 - Add Delete Ticket functionality
+- Add user authentication
 - Request data from the server in some interval or on some action (create, edit Ticket).
 - To be able to rearrange the order of the tickets in a column
 - Add a state management tool like Redux
 - Document components with Storybooks
 - Test components with Playwright
 - Depending on the audience of the application, improve Accessibility & SEO
+- Add theme capabilities
 
 ## Resources
 
