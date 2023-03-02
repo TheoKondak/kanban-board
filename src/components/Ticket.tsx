@@ -5,15 +5,17 @@ import { useDrag } from 'react-dnd';
 import { Link, useLocation } from 'react-router-dom';
 
 // Services
-import kanbanService from '../../services/kanbanService';
+import kanbanService from '../services/kanbanService';
 
 import 'react-edit-text/dist/index.css';
 
 const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal }) => {
   // Drag and Drop
-  const moveTicket = (columnId) => {
+  const moveTicket = (item, columnId) => {
     const updatedTickets = tickets.map((ticket) => (ticket.id === ticketId ? { ...ticket, columnId: columnId } : ticket));
-    setTickets(updatedTickets);
+    kanbanService.update(`tickets/${ticketId}`, { ...item, columnId: columnId }).then(() => {
+      setTickets(updatedTickets);
+    });
   };
 
   const [{ isDragging }, drag] = useDrag({
@@ -21,7 +23,7 @@ const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTicke
     item: { id: ticketId, title: title, content: content, columnId: columnId },
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult();
-      item && dropResult && moveTicket(item.id, dropResult.item.columnId);
+      item && dropResult && moveTicket(item, dropResult.item.columnId);
     },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
