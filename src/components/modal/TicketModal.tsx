@@ -13,11 +13,14 @@ import { VscCloseAll, VscEdit, VscLink } from 'react-icons/vsc';
 import kanbanService from '../../services/kanbanService';
 import copyTextToClipboard from '../../helper/copyTextToClipboard';
 
-const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch, settings }) => {
+// Helper
+import handleInputChange from '../../helper/handleInputChange';
+
+const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisible, tickets, reFetch }) => {
   let navigate = useNavigate();
   let { ticketId } = useParams();
 
-  const ticket: [Ticket] = tickets.filter((ticket) => ticket.id === Number(ticketId));
+  const ticket: [Ticket] | any = tickets.filter((ticket) => ticket.id === Number(ticketId));
   const [{ id, columnId, title, content }] = ticket;
   const [ticketTitle, setTicketTitle] = useState(title);
   const [ticketContent, setTicketContent] = useState(content);
@@ -29,8 +32,6 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
     navigate(-1);
     (title != ticketTitle || content != ticketContent) && reFetch();
   };
-
-  const handleChange = (e: React.FormEvent<HTMLInputElement>, setFn: Function) => setFn(e.target.value);
 
   const handleTicketUpdate = () => {
     // Create ticket object
@@ -76,7 +77,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
               <div className="flex flex-row gap-4 justify-between items-center">
                 <div className="flex flex-row items-center justify-start w-full">
                   <VscEdit className="text-primary-800 dark:text-primary-200 mr-0.5" />
-                  <h4 className="input-field text-primary-800 dark:text-primary-200 flex-grow-1 w-full ml-0.5">{<EditText style={{ width: '100%', fontSize: '1rem', lineHeight: '1.2rem', fontWeight: '400', backgroundColor: 'transparent', display: 'inline-block', borderRadius: '4px', padding: '.5ch' }} inputClassName="modalEditTitle" classList="text-left text-xxs w-full " defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)} />}</h4>
+                  <h4 className="input-field text-primary-800 dark:text-primary-200 flex-grow-1 w-full ml-0.5">{<EditText style={{ width: '100%', fontSize: '1rem', lineHeight: '1.2rem', fontWeight: '400', backgroundColor: 'transparent', display: 'inline-block', borderRadius: '4px', padding: '.5ch' }} inputClassName="modalEditTitle" classList="text-left text-xxs w-full " defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e, setTicketTitle)} />}</h4>
                 </div>
                 <button
                   className="text-black text-xs bg-white py-0.5 px-1 inline-block "
@@ -91,7 +92,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
 
               <div className="text-area">
                 {' '}
-                <EditTextarea inputClassName="modalEditContent" classList=" text-left text-xxs w-full shadow-lg" defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />
+                <EditTextarea inputClassName="modalEditContent" classList=" text-left text-xxs w-full shadow-lg" defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e, setTicketContent)} />
               </div>
             </div>
           </div>

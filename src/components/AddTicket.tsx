@@ -6,12 +6,13 @@ import Button from './Button';
 // Kanban Service
 import kanbanService from '../services/kanbanService';
 
+// Helper
+import handleInputChange from '../helper/handleInputChange';
+
 // import 'react-edit-text/dist/index.css';
 
 const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, tickets, columnId }) => {
   const [ticketTitle, setTicketTitle] = useState('Title');
-
-  const handleChange = (e: React.FormEvent<HTMLInputElement>, setFn: Function) => setFn(e.target.value);
 
   const handleSave = () => {
     // Create ticket object
@@ -39,7 +40,7 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
           name="TicketTitle"
           value={ticketTitle}
           defaultValue="Title"
-          onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)}
+          onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e, setTicketTitle)}
           onSave={() => {
             handleSave();
             setClicked(clicked ? false : true);
