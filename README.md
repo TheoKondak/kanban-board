@@ -1,4 +1,6 @@
 - [Kanban Tickets](#kanban-tickets)
+  - [Specifications](#specifications)
+    - [Tasks](#tasks)
   - [Start the app](#start-the-app)
   - [API Schema](#api-schema)
   - [Packages Used](#packages-used)
@@ -8,9 +10,14 @@
     - [React Edit Text](#react-edit-text)
     - [Tailwind CSS](#tailwind-css)
     - [React DND](#react-dnd)
+  - [Theme](#theme)
+    - [Dark Theme](#dark-theme)
+    - [Styling Approach](#styling-approach)
   - [Kanban State Diagram](#kanban-state-diagram)
   - [Testing](#testing)
-    - [Test HTTP Requests with Rest Client](#test-http-requests-with-rest-client)
+    - [Performance, Accessibility, SEO](#performance-accessibility-seo)
+    - [Testing HTTP Requests](#testing-http-requests)
+    - [Unit Testing](#unit-testing)
   - [Issues](#issues)
     - [Known Issues](#known-issues)
     - [Fixed Issues](#fixed-issues)
@@ -20,8 +27,21 @@
     - [Draggable Tickets](#draggable-tickets)
     - [Modal](#modal)
     - [Router](#router)
+    - [Tailwind CSS](#tailwind-css-1)
 
 # Kanban Tickets
+
+## Specifications
+
+Create a minimal Kanban board on which you can create, view and move tickets between columns.
+
+### Tasks
+
+- be able to create tickets on the board.
+- be able to move tickets between the various columns in an interactive way, persisting across page refreshes.
+- be able to share a direct link to the ticket.
+
+For more read the [specifications](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak/blob/main/docs/specifications.md) document.
 
 ## Start the app
 
@@ -36,25 +56,39 @@ To start the app, you will need Node.js and npm or yarn.
 | Start JSON-server | `npm run server` |
 | Start React App | `npm run dev` |
 
+> NOTE: By default, `JSON-server` runs on port 3000. Sometimes the port is not available which might cause the server to run on another port. In that case, create a `.env` file and add: `VITE_SERVER_URL='http://localhost:XXXX'`, where `XXXX` place the port that is mentioned in the terminal. Make sure you restart vite server after any change to `.env` file so that the changes take effect.
+
+
 ## API Schema
+
+Below is a short version of the API Schema. You can also view the full Schema [here](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak/blob/main/docs/API_SCHEMA.json).
 
 ```
 - Kanban: Array
-  - Settings: Object
+  - settings: Object
     - kanban: Object
+      - logo: Object
+        - src: String
+        - width: String
+        - height: String
+        - alt: String
+      - footer: Object
+        - copyrightInfo: String
+        - githubLink: String
+        - githubLinkOpensInNewTab: Boolean
     - tickets: Object
       - ticketPreviewLength: String
-  - Columns: Array
+  - columns: Array
     - id : Number
     - title: String
-  - Tickets: Array
+  - tickets: Array
     - id: Number
     - columnId: Number
     - title: String
     - content: String
 
 ```
-
+TODO explain the schema
 
 ## Packages Used
 
@@ -84,6 +118,39 @@ For designing the interface, I used [Tailwind CSS](https://tailwindcss.com/docs/
 
 For implementing the Drag and Drop functionality I used [React DND](https://github.com/react-dnd/react-dnd/), mostly because it is more up-to-date, and better maintained than its alternatives like [React-Beautiful-Dnd](https://github.com/atlassian/react-beautiful-dnd).
 
+
+## Theme
+
+The Kanban interface is pretty minimal when it comes to design. Color wise, Tailwind color gamuts are used to create a theme (view the [tailwind config](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak/blob/main/tailwind.config.cjs) file). The current approach is based on the Monochromatic design principles, since a Kanban dashboard is a professional tool that needs to be minimal, without complicated design patterns that will become tiresome to the user after a while.
+
+The color palette can be easily changed by changing the `primary` color. See more available colors [here](https://tailwindcss.com/docs/customizing-colors).
+
+```TSX
+const colors = require('tailwindcss/colors');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+        colors: {
+                primary: colors.slate,
+                companyColor: '#ff6224',
+        }
+    }
+  }
+}
+
+```
+
+### Dark Theme
+
+By default a high-key color palette is chosen. That means mostly bright colors. Dark themes are very popular though, and a lot of users find them more attractive. This kanban dashboard supports dark theme. To enable it click on the top right corner icon.
+
+### Styling Approach
+
+The styling of the application has been done with Tailwind CSS, mostly written in the Component `tsx` files. In some cases, that was not possible, and thus the styling for these components can be found in `App.css`. 
+
 ## Kanban State Diagram
 
 > NOTE: Some diagrams are using [Mermaid Syntax](https://mermaid.js.org/). Github supports it by default. If you are viewing this file on VSCode there are plugins (ex [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)) that will be able to read and display the diagrams. 
@@ -107,14 +174,25 @@ flowchart TD
 
 ## Testing
 
-TODO
+### Performance, Accessibility, SEO
 
-### Test HTTP Requests with Rest Client
+At the moment, there is no build version of the application - still some TSX issues to be fixed -, thus please do not take under consideration the **Performance** tests of the Google Lighthouse. 
+
+**Accessibility** testing yelds an 100% score, so no further improvements to be made.
+
+Since this is an internal application, SEO is irrelevant, thus no special attention has been paid to it. That being said, some static meta description has been added, as well as relevant HTML attributes to HTML elements where required (also to improve accessibility).
+
+You can view the results of the Google Lighthouse tests [here](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak/tree/main/tests/lighthouse%20reports).
+
+### Testing HTTP Requests
 
 For testing HTTP Requests I am using [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), a VSCode plugin. REST Client performs quick HTTP requests in a local environment. It's fast and easy to set up.
 
 To run the tests open  `requests/kanban.rest` and press **Send Request**
 
+### Unit Testing
+
+TODO
 
 ## Issues
 
@@ -134,8 +212,6 @@ To run the tests open  `requests/kanban.rest` and press **Send Request**
 
 ## Future Updates
 
-TODO 
-
 This app has some bare-bones capabilities, based on the [requested specifications](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak#technical-assignment-front-end-engineer). That means that it lacks basic functionality, such as deleting a ticket.
 
 - Add Delete Ticket functionality
@@ -148,6 +224,8 @@ This app has some bare-bones capabilities, based on the [requested specification
 - Depending on the audience of the application, improve Accessibility & SEO
 - Add theme capabilities
 - Integrate more thorough testing
+- Remove `react-edit-text` because it provides limited support in some cases, like styling, and sometimes has problematic interactivity.
+- Add support for Markdown
 
 ## Resources
 
@@ -169,4 +247,9 @@ This app has some bare-bones capabilities, based on the [requested specification
 - https://reactrouter.com/en/main/start/faq#why-does-route-have-an-element-prop-instead-of-render-or-component
 - https://reactrouter.com/en/main/start/tutorial
 - https://github.com/remix-run/react-router/tree/dev/examples/modal
+
+### Tailwind CSS
+
+- https://tailwindcss.com/docs/customizing-colors
+- https://tailwindcss.com/docs/installation
 
