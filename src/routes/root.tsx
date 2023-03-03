@@ -25,12 +25,12 @@ const Root: React.FC<Root> = ({ triggerTicketModal, kanbanColumns, tickets, setT
   const dndProviderOptions = detectTouch() ? { enableTouchEvents: true } : {};
 
   return (
-    <div className="h-screen flex flex-col  ">
+    <div className="h-screen grid ">
       {/* {settings ? <Header logo={settings.kanban.logo} /> : <Loading />} */}
 
       <Header logo={settings.kanban.logo} />
 
-      <div className="text-left md:my-4 mx-1 lg:mx-10 px-2 md:px-0 w-full flex md:justify-center md:gap-5 overflow-x-auto overflow-y-hidden ">
+      <div className="justify-self-stretch text-left md:my-4 mx-1 lg:mx-10 px-2 md:px-0 w-full flex md:justify-center md:gap-5 overflow-x-auto overflow-y-hidden ">
         {/* Provides the Drag and Drop capability */}
 
         <DndProvider backend={backend} options={dndProviderOptions}>
