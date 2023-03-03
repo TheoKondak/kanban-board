@@ -13,7 +13,7 @@ const Header: React.FC<Header> = ({ logo }) => {
     <header className="p-2 rounded-none backdrop-blur-md shadow-lg flex justify-between h-10">
       <Logo src={src} alt={alt} width={width} height={height} />
       {/* <div>Reactive Kanban</div> */}
-      <button onClick={toggleDarkMode} className="flex items-center justify-center p-1.5 bg-primary-700 dark:bg-primary-200">
+      <button onClick={toggleDarkMode} aria-label="Toggle between Light and Dark mode" className="flex items-center justify-center p-1.5 bg-primary-700 dark:bg-primary-200">
         <VscColorMode className="block w-4 h-4 text-primary-200 dark:text-primary-700" />
       </button>
     </header>

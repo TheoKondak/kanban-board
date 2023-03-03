@@ -11,13 +11,10 @@ const Footer: React.FC<CopytrightInfo> = ({ settings }) => {
 
   return (
     <footer className=" flex flex-col items-center justify-center gap-4 p-2 md:p-4 h-30 shadow-lg bg-primary-800">
-      <div className="copyright-info text-xxs">
-        <div></div>
-        {copyrightInfo}
-      </div>
+      <div className="copyright-info text-xxs">{copyrightInfo}</div>
       <div>
         {githubLink.length > 0 && (
-          <a href={githubLink} target={githubLinkOpensInNewTab && '_blank'} className="text-white hover:text-companyColor">
+          <a href={githubLink} target={githubLinkOpensInNewTab && '_blank'} className="text-white hover:text-companyColor" title="Visit the assignment on GitHub">
             <VscGithub />
           </a>
         )}
