@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "settings": {
+      "type": "object",
+      "properties": {
+        "kanban": {
+          "type": "object",
+          "properties": {
+            "logo": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "required": ["src", "width", "height", "alt"]
+            },
+            "footer": {
+              "type": "object",
+              "properties": {
+                "copyrightInfo": {
+                  "type": "string"
+                },
+                "githubLink": {
+                  "type": "string"
+                },
+                "githubLinkOpensInNewTab": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["copyrightInfo", "githubLink", "githubLinkOpensInNewTab"]
+            }
+          },
+          "required": ["logo", "footer"]
+        },
+        "tickets": {
+          "type": "object",
+          "properties": {
+            "ticketPreviewLength": {
+              "type": "integer"
+            }
+          },
+          "required": ["ticketPreviewLength"]
+        }
+      },
+      "required": ["kanban", "tickets"]
+    },
+    "columns": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": ["id", "title"]
+        }
+      ]
+    },
+    "tickets": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "columnId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            }
+          },
+          "required": ["id", "columnId", "title", "content"]
+        }
+      ]
+    }
+  },
+  "required": ["settings", "columns", "tickets"]
+}
