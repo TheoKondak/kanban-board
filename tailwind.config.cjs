@@ -8,7 +8,6 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.slate,
-        secondary: colors.lime,
         mirage: {
           100: '#B9C1D4',
           200: '#9AA5BF',
