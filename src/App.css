@@ -78,6 +78,21 @@
   h4.input-field > div > div {
     @apply text-primary-800 dark:text-primary-200;
   }
+
+  .text-area > *,
+  .text-area > * > * {
+    width: 100%;
+    font-size: 11px;
+    color: black;
+    font-weight: 400;
+    background-color: rgba(230, 230, 230, 1);
+    padding: 4px;
+    min-height: 120px;
+    height: 100% !important;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    @apply overflow-y-auto;
+  }
 }
 
 @layer base {

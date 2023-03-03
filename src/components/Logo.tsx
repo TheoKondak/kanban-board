@@ -7,7 +7,7 @@ const Logo: React.FC<Logo> = ({ src, alt, width, height }) => {
         <img src={src} alt={alt} width={width} height={height} />
       ) : (
         <span className="text-primary-800 dark:text-primary-200">
-          <VscBug />
+          <VscBug className="w-6 h-6" />
         </span>
       )}
     </div>

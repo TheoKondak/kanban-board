@@ -21,6 +21,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
   const [{ id, columnId, title, content }] = ticket;
   const [ticketTitle, setTicketTitle] = useState(title);
   const [ticketContent, setTicketContent] = useState(content);
+  const [contentAreaState, setContentAreaState] = useState(true);
 
   // When closing the modal, close the modal and navigate to the previous directory
   const closeModal = () => {
@@ -53,6 +54,9 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
       alert('Ticket Title cannot be empty');
     }
   };
+
+  const toggleContentArea = () => setContentAreaState(!contentAreaState);
+
   return (
     <>
       {tickets.length === 0 ? (
@@ -71,7 +75,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
             <div className="">
               <div className="flex flex-row gap-4 justify-between items-center">
                 <div className="flex flex-row items-center justify-start w-full">
-                  <VscEdit className="text-primary-800 dark:text-primary-200" />
+                  <VscEdit className="text-primary-800 dark:text-primary-200 mr-0.5" />
                   <h4 className="input-field text-primary-800 dark:text-primary-200 flex-grow-1 w-full ml-0.5">{<EditText style={{ width: '100%', fontSize: '1rem', lineHeight: '1.2rem', fontWeight: '400', backgroundColor: 'transparent', display: 'inline-block', borderRadius: '4px', padding: '.5ch' }} inputClassName="modalEditTitle" classList="text-left text-xxs w-full " defaultValue={title} value={ticketTitle} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketTitle)} />}</h4>
                 </div>
                 <button
@@ -85,7 +89,10 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
               </div>
               <hr className=" block mt-2 mb-3 text-primary-900" />
 
-              <div>{<EditTextarea style={{ width: '100%', fontSize: '11px', color: 'black', fontWeight: '400', backgroundColor: 'rgba(230,230,230, 1)', padding: '4px', minHeight: '88px', borderRadius: '0.25rem' }} inputClassName="modalEditContent" classList="text-left text-xxs w-full shadow-lg" defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />}</div>
+              <div className="text-area">
+                {' '}
+                <EditTextarea inputClassName="modalEditContent" classList=" text-left text-xxs w-full shadow-lg" defaultValue={content} value={ticketContent} onSave={() => handleTicketUpdate()} onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setTicketContent)} />
+              </div>
             </div>
           </div>
         </>
