@@ -164,10 +164,9 @@ flowchart TD
     C --> E(Create Ticket)
     D --> E(Ticket)
     E --> H(Drop to another column)
-    E --> F(Edit Ticket)
     E --> J(View Ticket)
+    J --> F(Edit Ticket)
     J --> I[Modal]
-   
     F --> I[Modal]
    
 ```
