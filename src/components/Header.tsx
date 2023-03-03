@@ -1,3 +1,5 @@
+import { VscColorMode } from 'react-icons/vsc';
+import toggleDarkMode from '../helper/toggleDarkMode';
 import Logo from './Logo';
 
 interface Header {
@@ -11,6 +13,9 @@ const Header: React.FC<Header> = ({ logo }) => {
     <header className="p-2 rounded-none backdrop-blur-md shadow-lg flex justify-between h-10">
       <Logo src={src} alt={alt} width={width} height={height} />
       {/* <div>Reactive Kanban</div> */}
+      <button onClick={toggleDarkMode} className="flex items-center justify-center p-1.5 bg-primary-800 dark:bg-primary-200">
+        <VscColorMode className="block w-4 h-4 text-primary-200 dark:text-primary-800" />
+      </button>
     </header>
   );
 };
