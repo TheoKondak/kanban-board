@@ -74,8 +74,9 @@
     @apply text-left;
   }
 
-  h4 > * {
-    @apply text-primary-800;
+  h4.input-field > div,
+  h4.input-field > div > div {
+    @apply text-primary-800 dark:text-primary-200;
   }
 }
 
