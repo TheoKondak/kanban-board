@@ -13,7 +13,7 @@
   - [Theme](#theme)
     - [Dark Theme](#dark-theme)
     - [Styling Approach](#styling-approach)
-  - [Kanban State Diagram](#kanban-state-diagram)
+  - [Kanban Flow Diagram](#kanban-flow-diagram)
   - [Testing](#testing)
     - [Performance, Accessibility, SEO](#performance-accessibility-seo)
     - [Testing HTTP Requests](#testing-http-requests)
@@ -151,7 +151,7 @@ By default a high-key color palette is chosen. That means mostly bright colors. 
 
 The styling of the application has been done with Tailwind CSS, mostly written in the Component `tsx` files. In some cases, that was not possible, and thus the styling for these components can be found in `App.css`. 
 
-## Kanban State Diagram
+## Kanban Flow Diagram
 
 > NOTE: Some diagrams are using [Mermaid Syntax](https://mermaid.js.org/). Github supports it by default. If you are viewing this file on VSCode there are plugins (ex [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)) that will be able to read and display the diagrams. 
 
@@ -199,6 +199,7 @@ TODO
 
 - Typescript is only partially implemented, some interfaces need to be updated.
 - Modal in desktop resolutions renders off-center.
+- Some components, like Button are not used everywhere.
 
 ### Fixed Issues
 
