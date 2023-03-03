@@ -25,9 +25,9 @@ module.exports = {
         black: '#000000',
       },
       fontSize: {
-        xs: '11px',
-        xxs: '10px',
-        xxxs: '9px',
+        xs: '14px',
+        xxs: '13px',
+        xxxs: '12px',
       },
       fontFamily: {
         'roboto-condensed': ['"Roboto Condensed"', 'cursive'],

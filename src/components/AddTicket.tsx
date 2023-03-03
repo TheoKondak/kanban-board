@@ -33,7 +33,7 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
   };
 
   return (
-    <div className="bg-primary-800 rounded mx-2 mb-2 flex flex-col items-center justify-start ">
+    <div className="bg-primary-500 dark:bg-primary-800 rounded mx-2 mb-2 flex flex-col items-center justify-start ">
       <h4 className="w-full text-left text-xxs p-2">
         <EditText
           name="TicketTitle"
@@ -50,7 +50,7 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
           onEditMode={() => {
             setTicketTitle('');
           }}
-          className="pl-1 text-xxs leading-5 w-full rounded-none active:rounded-none focus:rounded-none block border-transparent active:border-transparent focus:border-transparent hover:shadow-lg hover:bg-primary-800"
+          className="pl-1 text-xxs leading-5 w-full rounded-sm block border-transparent active:border-transparent focus:border-transparent hover:shadow-lg hover:bg-primary-400 hover:text-primary-800 dark:hover:bg-primary-800"
           // The textfield on click has an input element, that is not accessible from the JS side. The documentation is not clear on how to handle it, so I have added the input field css on App.css selector: [name='TicketTitle']
         />
       </h4>
