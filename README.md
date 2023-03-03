@@ -1,6 +1,7 @@
 - [Kanban Tickets](#kanban-tickets)
   - [Specifications](#specifications)
     - [Tasks](#tasks)
+  - [Code Linting](#code-linting)
   - [Start the app](#start-the-app)
   - [API Schema](#api-schema)
   - [Packages Used](#packages-used)
@@ -28,6 +29,7 @@
     - [Modal](#modal)
     - [Router](#router)
     - [Tailwind CSS](#tailwind-css-1)
+    - [Setting Up the project (Vite, React, TypeScript, Vitest, Testing-Library, Eslint, Prettier)](#setting-up-the-project-vite-react-typescript-vitest-testing-library-eslint-prettier)
 
 # Kanban Tickets
 
@@ -42,6 +44,10 @@ Create a minimal Kanban board on which you can create, view and move tickets bet
 - be able to share a direct link to the ticket.
 
 For more read the [specifications](https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak/blob/main/docs/specifications.md) document.
+
+## Code Linting
+
+For linting this project adopts the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
 
 ## Start the app
 
@@ -197,7 +203,7 @@ TODO
 
 ### Known Issues
 
-- Typescript is only partially implemented, some interfaces need to be updated.
+- Typescript is only partially implemented, some interfaces need to be updated. So `npm run build` ing the project is not possible at the moment.
 - Modal in desktop resolutions renders off-center.
 - Some components, like Button are not used everywhere.
 
@@ -226,6 +232,7 @@ This app has some bare-bones capabilities, based on the [requested specification
 - Integrate more thorough testing
 - Remove `react-edit-text` because it provides limited support in some cases, like styling, and sometimes has problematic interactivity.
 - Add support for Markdown
+- Add support for multiple languages
 
 ## Resources
 
@@ -253,3 +260,6 @@ This app has some bare-bones capabilities, based on the [requested specification
 - https://tailwindcss.com/docs/customizing-colors
 - https://tailwindcss.com/docs/installation
 
+### Setting Up the project (Vite, React, TypeScript, Vitest, Testing-Library, Eslint, Prettier)
+
+- https://www.youtube.com/watch?v=cchqeWY0Nak&ab_channel=CodingGarden
