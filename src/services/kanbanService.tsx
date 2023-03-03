@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3000';
 
-const get: Get = (query) => {
+const get = (query: string) => {
   const request = axios.get(baseUrl + query);
   return request
     .then((response) => response.data)
@@ -26,7 +26,7 @@ const get: Get = (query) => {
     });
 };
 
-const create: Create = (query, newTicket) => {
+const create = (query: string, newTicket: Ticket) => {
   const request = axios.post(baseUrl + query, newTicket);
   return request
     .then((response) => {
@@ -52,7 +52,7 @@ const create: Create = (query, newTicket) => {
     });
 };
 
-const update: Update = (query, newObject) => {
+const update = (query: string, newObject: Object) => {
   const request = axios.put(`${baseUrl}/${query}`, newObject);
   return request
     .then((response) => {

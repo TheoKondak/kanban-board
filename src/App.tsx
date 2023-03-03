@@ -16,11 +16,11 @@ import './App.css';
 
 const App = () => {
   const [isTicketModalVisible, setIsTicketModalVisible] = useState(false);
-  const [kanbanColumns, setKanbanColumns] = useState<Kanban[] | null>(null);
+  const [kanbanColumns, setKanbanColumns] = useState<KanbanColumn[] | null>(null);
   const [tickets, setTickets] = useState<Tickets | null>(null);
   const [fetch, setFetch] = useState(false);
   const [settings, setSettings] = useState(null);
-
+  console.log(typeof kanbanService.get);
   // Get the API Data
   useEffect(() => {
     kanbanService.get('/columns').then((columns) => {
@@ -48,7 +48,7 @@ const App = () => {
   }, [location]);
 
   // Refetch data
-  const reFetch = () => {
+  const reFetch: Function = () => {
     setFetch(!fetch);
   };
 
@@ -57,6 +57,7 @@ const App = () => {
     setIsTicketModalVisible((wasTicketModalVisible) => !wasTicketModalVisible);
   };
 
+  console.log(kanbanColumns);
   return (
     <div className="App h-screen overflow-hidden bg-primary-200 dark:bg-primary-800">
       {tickets ? (
@@ -74,7 +75,7 @@ const App = () => {
           )}
         </div>
       ) : (
-        <Loading />
+        <Loading type="spin" color="black" />
       )}
     </div>
   );

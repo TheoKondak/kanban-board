@@ -1,8 +1,9 @@
 interface Root {
   triggerTicketModal: Function;
-  kanbanColumns: KanbanColumns;
+  kanbanColumns: KanbanColumn[] | null;
   tickets: Tickets;
   setTickets: Function;
+  settings: Object | null;
 }
 
 interface Ticket {
@@ -13,6 +14,7 @@ interface Ticket {
 }
 
 interface Tickets {
+  length: number;
   map(arg0: (ticket: any) => any): unknown;
   concat(newTicket: any): any;
   filter(arg0: (ticket: any) => boolean): unknown;
@@ -40,6 +42,7 @@ interface TicketModal {
   onBackdropClick: Function;
   isTicketModalVisible: Function;
   tickets: Tickets;
+  reFetch: Function;
 }
 
 interface Column {
@@ -73,6 +76,9 @@ interface Button {
 interface BaseModalWrapper {
   onBackdropClick: Function;
   isTicketModalVisible: boolean;
+  tickets: Tickets;
+  reFetch: Function;
+  settings: Object | Null;
 }
 
 interface Loading {
@@ -88,15 +94,6 @@ interface Logo {
 }
 
 // Services
-
-interface Get {
-  query: string;
-}
-
-interface Create {
-  query: string;
-  newTicket: Ticket;
-}
 
 interface Update {
   query: string;

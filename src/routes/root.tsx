@@ -48,7 +48,7 @@ const Root: React.FC<Root> = ({ triggerTicketModal, kanbanColumns, tickets, setT
           </div>
         </DndProvider>
       </div>
-      {settings ? <Footer settings={settings.kanban.footer} /> : <Loading />}
+      {settings ? <Footer settings={settings.kanban.footer} /> : <Loading type="spin" color="white" />}
     </div>
   );
 };
