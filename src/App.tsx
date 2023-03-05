@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Router
-import { Routes, Route, Outlet, Link, useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 // Services
 import kanbanService from './services/kanbanService';
@@ -57,7 +57,6 @@ const App = () => {
     setIsTicketModalVisible((wasTicketModalVisible) => !wasTicketModalVisible);
   };
 
-  console.log(kanbanColumns);
   return (
     <div className="App h-screen overflow-hidden bg-primary-200 dark:bg-primary-800">
       {tickets ? (
@@ -75,7 +74,9 @@ const App = () => {
           )}
         </div>
       ) : (
-        <Loading type="spin" color="black" />
+        <div className="w-full h-full flex items-center justify-center">
+          <Loading type="spin" color="black" />
+        </div>
       )}
     </div>
   );
