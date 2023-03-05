@@ -65,7 +65,7 @@ const TicketModal: React.FC<TicketModal> = ({ onBackdropClick, isTicketModalVisi
         <Navigate to="/" />
       ) : (
         <>
-          <div className={`fixed inset-0 bg-primary-900/50 dark:bg-primary-900/70 ${isTicketModalVisible ? 'opacity-100 backdrop-blur-sm' : 'pointer-events-none opacity-0'}`} onClick={closeModal}></div>
+          <div className={`ticket-modal fixed inset-0 bg-primary-900/50 dark:bg-primary-900/70 ${isTicketModalVisible ? 'opacity-100 backdrop-blur-sm' : 'pointer-events-none opacity-0'}`} onClick={closeModal}></div>
           <div className={`relative inset-8 md:inset-1/4 h-5/6 md:h-3/6 w-5/6 md:w-auto bg-primary-300 dark:bg-primary-700 shadow-lg rounded-sm max-w-screen-sm  px-4 py-2 ${isTicketModalVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
             <div className="modalHeader relative">
               <button className="text-black bg-white absolute p-0 -top-6 -right-7" onClick={closeModal}>

@@ -59,8 +59,9 @@ const App = () => {
 
   return (
     <div className="App h-screen overflow-hidden bg-primary-200 dark:bg-primary-800">
+      <h1>Modal Example</h1>
       {tickets ? (
-        <div className="h-screen">
+        <div className="kanban h-screen">
           <Routes location={state?.backgroundLocation || location}>
             <Route path="/" element={<Root triggerTicketModal={triggerTicketModal} kanbanColumns={kanbanColumns} tickets={tickets} setTickets={setTickets} settings={settings} />}>
               <Route path="ticket/:ticketId" element={<BaseModalWrapper onBackdropClick={triggerTicketModal} isTicketModalVisible={isTicketModalVisible} tickets={tickets} reFetch={reFetch} settings={settings} />} />
@@ -74,7 +75,7 @@ const App = () => {
           )}
         </div>
       ) : (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="loading-app w-full h-full flex items-center justify-center">
           <Loading type="spin" color="black" />
         </div>
       )}

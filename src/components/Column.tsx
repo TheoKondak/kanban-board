@@ -25,7 +25,7 @@ const Column: React.FC<Column> = ({ columnId, title, tickets, setTickets, trigge
   );
 
   return (
-    <div ref={drop} className={`flex flex-col items-center flex-shrink-0 w-[270px]  bg-primary-300 dark:bg-primary-600 p-1 pb-3 mx-2 my-2 md:my-0 rounded-md ${isOver ? 'opacity-50' : 'opacity-100'} drop-shadow-sm`}>
+    <div ref={drop} className={`kanban-column flex flex-col items-center flex-shrink-0 w-[270px]  bg-primary-300 dark:bg-primary-600 p-1 pb-3 mx-2 my-2 md:my-0 rounded-md ${isOver ? 'opacity-50' : 'opacity-100'} drop-shadow-sm`}>
       <h3 className="text-md text-left text-primary-800 dark:text-white w-full my-2 mt-1 py-0 pl-2 capitalize">{title}</h3>
       <AddTicket columnId={columnId} tickets={tickets} setTickets={setTickets} settings={settings} />
 
