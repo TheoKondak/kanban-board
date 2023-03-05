@@ -263,3 +263,5 @@ This app has some bare-bones capabilities, based on the [requested specification
 ### Setting Up the project (Vite, React, TypeScript, Vitest, Testing-Library, Eslint, Prettier)
 
 - https://www.youtube.com/watch?v=cchqeWY0Nak&ab_channel=CodingGarden
+- Vite & Vitest configuration file: https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib-msw/vite.config.ts
+- https://markus.oberlehner.net/blog/using-testing-library-jest-dom-with-vitest/

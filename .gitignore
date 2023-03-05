@@ -31,3 +31,4 @@ Questions.md
 Docs/Entity Relationship Diagram.md
 Docs/kanbanTickets.md
 .env
+coverage/**
