@@ -8,8 +8,8 @@
         "alt": "Kanban Logo"
       },
       "footer": {
-        "copyrightInfo": "Made With Love by Theo for MobieTrain",
-        "githubLink": "https://github.com/madewithlove/technical-assignment-front-end-engineer-TheoKondak",
+        "copyrightInfo": "Made With Love",
+        "githubLink": "",
         "githubLinkOpensInNewTab": true
       }
     },
@@ -32,66 +32,6 @@
     }
   ],
   "tickets": [
-    {
-      "id": 1,
-      "columnId": 0,
-      "title": "Poland",
-      "content": "Feil Inc"
-    },
-    {
-      "id": 2,
-      "columnId": 0,
-      "title": "United States",
-      "content": "Hoeger Group"
-    },
-    {
-      "id": 3,
-      "columnId": 0,
-      "title": "Indonesia",
-      "content": "Hickle Inc"
-    },
-    {
-      "id": 4,
-      "columnId": 0,
-      "title": "Nigeria",
-      "content": "Botsford and Sons"
-    },
-    {
-      "id": 5,
-      "columnId": 0,
-      "title": "China",
-      "content": "Nader, Boehm and Schuppe"
-    },
-    {
-      "id": 6,
-      "columnId": 0,
-      "title": "Portugal",
-      "content": "Berge, Kshlerin and Mertz"
-    },
-    {
-      "id": 7,
-      "columnId": 0,
-      "title": "Russia",
-      "content": "Breitenberg, Hilpert and Daniel"
-    },
-    {
-      "id": 8,
-      "columnId": 0,
-      "title": "Philippines",
-      "content": "Mayert, Gusikowski and Adams"
-    },
-    {
-      "id": 9,
-      "columnId": 0,
-      "title": "Tanzania",
-      "content": "Maggio, Cummerata and Konopelski"
-    },
-    {
-      "id": 10,
-      "columnId": 0,
-      "title": "Honduras",
-      "content": "Cassin-Balistreri"
-    },
     {
       "id": 11,
       "columnId": 1,
