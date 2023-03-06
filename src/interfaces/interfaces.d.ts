@@ -71,6 +71,7 @@ interface Kanban {
 interface Button {
   text: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
+  dataTestId: string;
 }
 
 interface BaseModalWrapper {
