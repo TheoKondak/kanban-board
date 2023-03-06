@@ -197,7 +197,11 @@ To run the tests open `requests/kanban.rest` and press **Send Request**
 
 ### Unit Testing
 
-[Vitest](https://vitest.dev/) is a new testing suite that has a different approach, and is a lot faster, runs out of the box, and shares configuration with Vite. There are several other reasons why Vitest is the better solution. [Read more](https://vitest.dev/guide/why.html) 
+For unit testing and testing react components, [React Testing Library](https://testing-library.com/docs) was used along with [Vitest](https://vitest.dev/) 
+
+React Testing Library was used in combination with vitest to test the app components. React Testing Library is recommended by the [react docs](https://reactjs.org/docs/testing.html#tools)
+
+Vitest is a new testing suite that has a different approach, and is a lot faster, runs out of the box, and shares configuration with Vite. There are several other reasons why Vitest is the better solution. [Read more](https://vitest.dev/guide/why.html) 
 
 At the moment there are several tests both for components and functions. Even though several aspects of the applications are checked, more tests need to be written, to cover a wider area of cases, as well as to cover 100% of the components. 
 
