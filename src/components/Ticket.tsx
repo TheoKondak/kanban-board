@@ -7,8 +7,6 @@ import { Link, useLocation } from 'react-router-dom';
 // Services
 import kanbanService from '../services/kanbanService';
 
-// import 'react-edit-text/dist/index.css';
-
 const Ticket: React.FC<Ticket> = ({ ticketId, title, content, columnId, setTickets, tickets, triggerTicketModal, settings }) => {
   // Drag and Drop
   const moveTicket = (item, columnId) => {

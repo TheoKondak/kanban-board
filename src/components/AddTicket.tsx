@@ -37,9 +37,9 @@ const TicketTitle: React.FC<TicketTitle> = ({ clicked, setClicked, setTickets, t
     <div className="bg-primary-500 dark:bg-primary-800 rounded mx-2 mb-2 flex flex-col items-center justify-start ">
       <h4 className="w-full text-left text-xxs p-2">
         <EditText
-          name="TicketTitle"
           value={ticketTitle}
           defaultValue="Title"
+          type="text"
           onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e, setTicketTitle)}
           onSave={() => {
             handleSave();
@@ -73,6 +73,7 @@ const AddTicket: React.FC<AddTicket> = ({ columnId, tickets, setTickets, setting
       ) : (
         <div className="bg-primary-500 hover:bg-primary-600 dark:bg-primary-800 dark:hover:bg-primary-700 rounded mx-2 mb-2 flex flex-col items-center justify-center">
           <Button
+            dataTestId="TicketTitle"
             text="Add New Ticket"
             onClick={() => {
               onAddTicketClick(clicked, setClicked);

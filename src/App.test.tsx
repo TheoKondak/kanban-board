@@ -8,9 +8,6 @@ import { MemoryRouter } from 'react-router';
 // To mock window.matchMedia
 import '@testing-library/jest-dom/extend-expect';
 
-// Services
-import kanbanService from './services/kanbanService';
-
 import App from './App';
 
 // mock matchMedia
